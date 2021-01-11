@@ -1,0 +1,12 @@
+{
+  "name": "ReactNativeFresh",
+  "displayName": "ReactNativeFresh",
+  "expo": {
+    "name": "ReactNativeFresh",
+    "slug": "ReactNativeFresh",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
