@@ -48,11 +48,19 @@ class Inputs extends Component {
             <Text  style={styles.titleText}><Image source = {{uri:'http://critssl.com/marketEka/image/seller-icon.png'}}
                   style = {styles.icon}
                   /> Seller : {this.state.item.store}</Text>
+
+            <TouchableOpacity>
+               <Text style = {styles.buyBtn}>
+               <Image source = {{uri:'http://critssl.com/marketEka/image/buy-btn.png'}}
+                  style = {styles.buyBtnImg}
+                  /> 
+               </Text>
+            </TouchableOpacity>
             <Text  style={styles.titleText}> <Image source = {{uri:'http://critssl.com/marketEka/image/description-icon.png'}}
                   style = {styles.icon}
                   />  Description : 
                   {this.state.item.description}</Text>
-            <Button text = {"Button Text"} />
+            
             </ScrollView>
          </View>
       )
@@ -98,5 +106,17 @@ const styles = StyleSheet.create({
       width: 370,
       margin:10,
        height: 370 
+    },
+    buyBtn: {
+       borderWidth: 1,
+       padding: 25,
+       borderColor: 'black',
+     
+    }
+    ,
+    buyBtnImg: {
+      width: 200,
+      margin:10,
+       height: 20 
     }
 })
