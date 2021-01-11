@@ -46,12 +46,12 @@ const styles = StyleSheet.create({
     },
     itemName: {
       fontSize: 16,
-      color: '#fff',
+      color: '#000',
       fontWeight: '600',
     },
     itemCode: {
       fontWeight: '600',
       fontSize: 12,
-      color: '#fff',
+      color: '#000',
     },
   });

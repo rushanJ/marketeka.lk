@@ -20,7 +20,7 @@ state={
 }
    sellerAccount = (props) => {
       axios
-           .post('http://192.168.8.113:3000/user/store', {
+           .post('http://192.168.8.101:3000/user/store', {
             user: this.props.user.id
                })
            .then(data => {
@@ -98,12 +98,12 @@ const styles = StyleSheet.create({
     },
     itemName: {
       fontSize: 16,
-      color: '#fff',
+      color: '#000',
       fontWeight: '600',
     },
     itemCode: {
       fontWeight: '600',
       fontSize: 12,
-      color: '#fff',
+      color: '#000',
     },
 })

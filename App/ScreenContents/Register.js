@@ -27,7 +27,7 @@ class Login extends Component {
    }
    register = (email, pass,name) => {
     
-      axios.post('http://192.168.8.113:3000/user', {
+      axios.post('http://192.168.8.101:3000/user', {
          email: email,
          name: name,
          password: pass
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
    input: {
       margin: 15,
       height: 40,
-      borderColor: '#FFF',
+      borderColor: '#000',
       borderWidth: 1,
       color: 'white'
    },

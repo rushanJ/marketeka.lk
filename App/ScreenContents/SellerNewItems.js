@@ -48,7 +48,7 @@ class Login extends Component {
    }
    srote = (serialNumber, user,name, qty,supplierPrice, retailPrice,sellingPrice,description,supplier) => {
     
-      axios.post('http://192.168.8.113:3000/item', {
+      axios.post('http://192.168.8.101:3000/item', {
          serialNumber: serialNumber,
          shop: user,
          name: name,
@@ -91,28 +91,28 @@ class Login extends Component {
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = "Serial Number"
-               placeholderTextColor = "#fff"
+               placeholderTextColor = "#000"
                autoCapitalize = "none"
                onChangeText = {this.handleEmail}/>
             
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = "name"
-               placeholderTextColor = "#fff"
+               placeholderTextColor = "#000"
                autoCapitalize = "none"
                onChangeText = {this.handleName}/>
             
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = "Qty "
-               placeholderTextColor = "#fff"
+               placeholderTextColor = "#000"
                autoCapitalize = "none"
                onChangeText = {this.handleQty}/>
 
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = "Supplier Price "
-               placeholderTextColor = "#fff"
+               placeholderTextColor = "#000"
                autoCapitalize = "none"
                onChangeText = {this.handleSupplierPrice}/> 
 
@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
    input: {
       margin: 15,
       height: 40,
-      borderColor: '#FFF',
+      borderColor: '#000',
       borderWidth: 1,
       color: 'black'
    },

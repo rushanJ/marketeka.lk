@@ -8,7 +8,7 @@ const Home = () => {
       Actions.register()
    }
    return (
-       <View  style={{backgroundColor:'#fff'}}>
+       <View  style={{backgroundColor:'#000'}}>
            <ScrollView>
              <ScreenContent/>
              </ScrollView>

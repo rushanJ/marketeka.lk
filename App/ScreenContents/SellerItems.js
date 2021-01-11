@@ -25,13 +25,13 @@ state={
    getItem = () => {
       var letters = '0123456789ABCDEF';
        axios
-           .post('http://192.168.8.113:3000/user/wishlist', {
+           .post('http://192.168.8.101:3000/user/wishlist', {
             user: this.props.user.id
                })
            .then(data => {
              //console.log(data.data.dataset[0]);
              for (var i = 0; i < data.data.dataset.length; i++) {
-                 this.state.items.push({ name: data.data.dataset[i].name,description: data.data.dataset[i].description,qty: data.data.dataset[i].qty,price: data.data.dataset[i].sellingPrice, code: '#dce3e3' ,image:'http://192.168.8.113/marketEka/images/Products/'+data.data.dataset[i].id+'.jpg',id:data.data.dataset[i].id});
+                 this.state.items.push({ name: data.data.dataset[i].name,description: data.data.dataset[i].description,qty: data.data.dataset[i].qty,price: data.data.dataset[i].sellingPrice, code: '#dce3e3' ,image:'http://192.168.8.101/marketEka/images/Products/'+data.data.dataset[i].id+'.jpg',id:data.data.dataset[i].id});
              }
              console.log(this.state.items);
         })
@@ -112,12 +112,12 @@ const styles = StyleSheet.create({
     },
     itemName: {
       fontSize: 16,
-      color: '#fff',
+      color: '#000',
       fontWeight: '600',
     },
     itemCode: {
       fontWeight: '600',
       fontSize: 12,
-      color: '#fff',
+      color: '#000',
     },
 })

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity,  StyleSheet,Image } from 'react-native'
+import { View, Text, TouchableOpacity,  StyleSheet,Image ,ScrollView} from 'react-native'
 import { Actions } from 'react-native-router-flux';
 import axios from 'axios';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -18,7 +18,7 @@ class Inputs extends Component {
      getItem = () => {
         
          axios
-             .get("http://192.168.8.113:3000/item/"+this.props.item)
+             .get("http://192.168.8.101:3000/item/"+this.props.item)
              .then(data => {
                console.log(data.data.length);
                //this.setState(item,data.data)
@@ -35,16 +35,25 @@ class Inputs extends Component {
    
    render() {
       return (
+
          <View style = {styles.container}>
+            <ScrollView>
             {/* <Text  style={styles.titleText}>{this.props.item}</Text> */}
-            <Image source = {{uri:'http://192.168.8.113/marketEka/images/Products/'+this.state.item.id+'.jpg'}}style = {{ width: 370, height: 370 }}/>
+            <Image source = {{uri:'http://192.168.8.101/marketEka/images/Products/'+this.state.item.id+'.jpg'}} style = {styles.img} />
             <Text  style={styles.titleText}>{this.state.item.name}</Text>
-            <Text  style={styles.titleText}>LKR {this.state.item.sellingPrice}</Text>
-            <Text  style={styles.titleText}> {this.state.item.qty} left</Text>
-            <Text  style={styles.titleText}> Seller : {this.state.item.shop}</Text>
-            <Text  style={styles.titleText}> description : {this.state.item.description}</Text>
-            <Button text = {"Button Text"} />
+            <Text  style={styles.priceText}><Image source = {{uri:'http://critssl.com/marketEka/image/money-icon.png'}}
+                  style = {styles.icon}
+                  /> LKR {this.state.item.sellingPrice} ({this.state.item.qty} left)</Text>
             
+            <Text  style={styles.titleText}><Image source = {{uri:'http://critssl.com/marketEka/image/seller-icon.png'}}
+                  style = {styles.icon}
+                  /> Seller : {this.state.item.store}</Text>
+            <Text  style={styles.titleText}> <Image source = {{uri:'http://critssl.com/marketEka/image/description-icon.png'}}
+                  style = {styles.icon}
+                  />  Description : 
+                  {this.state.item.description}</Text>
+            <Button text = {"Button Text"} />
+            </ScrollView>
          </View>
       )
    }
@@ -66,8 +75,28 @@ export default connect(mapStateToProps,mapDispatchToProps)(Inputs)
 
 const styles = StyleSheet.create({
    titleText: {
-      color:'black',
-      fontSize: 40,
-      fontWeight: "bold"
+      color:'gray',
+      fontSize: 20,
+      fontWeight: "bold",
+      padding:10
+    },
+    priceText: {
+      color:'red',
+      fontSize: 20,
+      fontWeight: "bold",
+      paddingLeft:10
+    },
+    
+    icon:{
+      width: 20,
+      margin:10,
+       height: 20 
+    },
+
+    
+    img:{
+      width: 370,
+      margin:10,
+       height: 370 
     }
 })

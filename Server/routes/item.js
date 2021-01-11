@@ -17,7 +17,7 @@ Router.get("/:item", urlencodedParser, (req, res) => {
      console.log(req.params.id);
     item = req.params.item;
 
-    mysqlConnection.query("SELECT * FROM `item`  WHERE `id`='" + item + "'", (err, rows, fields) => {
+    mysqlConnection.query("SELECT `item`.`id`,`item`.`serialNo`,`item`.`name`,`item`.`qty`,`item`.`sellingPrice`,`item`.`description`,`store`.`name` AS `store` FROM `item` ,`store` WHERE `item`.`shop`=`store`.`id` AND `item`.`id`='" + item + "'", (err, rows, fields) => {
         if (!err) res.send(rows);
         else console.log(err)
     })

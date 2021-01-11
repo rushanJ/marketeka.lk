@@ -16,18 +16,18 @@ const reducer=(state=initialState,action)=>{
      
       switch (action.type) {
         case 'ITEM':
-          return {...initialState,item:action.value}
+          return {...initialState,item:action.value};
             break;
         case 'SEARCH_KEY':
-              return {...initialState,searchKey:action.value}
+              return {...initialState,searchKey:action.value};
                 break;
     
         case 'USER_LOGED_IN':
-              return {...initialState,user:action.value}
+              return {...initialState,user:action.value};
               break;
         
         case 'USER_STORE':
-              return {...initialState,store:action.value}
+              return {...initialState,store:action.value};
               break;
         default:
           

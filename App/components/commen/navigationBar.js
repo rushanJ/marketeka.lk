@@ -1,5 +1,5 @@
 import React,{ Component } from 'react'
-import { TouchableOpacity, Text,View  ,StyleSheet} from 'react-native';
+import { TouchableOpacity, Text,View  ,StyleSheet,Image} from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 
@@ -13,10 +13,27 @@ const Home = () => {
    return (
        
              <View style = {styles.container}>
-         <TouchableOpacity style = {styles.redbox} onPress={Actions.home} ></TouchableOpacity>
-         <TouchableOpacity style = {styles.blackbox} onPress={Actions.search} ></TouchableOpacity>
-         <TouchableOpacity style = {styles.bluebox} onPress={Actions.wishlist} ></TouchableOpacity>
-         <TouchableOpacity style = {styles.redbox} onPress={Actions.profile} ></TouchableOpacity>
+         <TouchableOpacity style = {styles.box} onPress={Actions.home} >
+         <Image source = {{uri:'http://critssl.com/marketEka/image/home-icon.png'}}
+                  style = {styles.imgHome}
+                  />
+         </TouchableOpacity>
+         <TouchableOpacity style = {styles.box} onPress={Actions.search} >
+         <Image source = {{uri:'http://critssl.com/marketEka/image/search-icon.png'}}
+                  style = {styles.imgSearch}
+                  />
+         </TouchableOpacity>
+         <TouchableOpacity style = {styles.box} onPress={Actions.wishlist} >
+         <Image source = {{uri:'http://critssl.com/marketEka/image/wishlist-icon.png'}}
+                  style = {styles.imgWishlist}
+                  />
+         </TouchableOpacity>
+         <TouchableOpacity style = {styles.box} onPress={Actions.profile} >
+         <Image source = {{uri:'http://critssl.com/marketEka/image/profile-icon.png'}}
+                  style = {styles.imgProfile}
+                  />
+         </TouchableOpacity>
+       
       </View>
        
    )
@@ -30,12 +47,17 @@ const styles = StyleSheet.create ({
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'flex-end',
-      backgroundColor: 'white',
+      backgroundColor: 'black',
       position: 'absolute',
     bottom: 0,
     left: 0,
     right: 0,
     paddingTop:5
+   },
+   box: {
+      width: 100,
+      height: 50,
+      backgroundColor:'black'
    },
    redbox: {
       width: 100,
@@ -51,5 +73,29 @@ const styles = StyleSheet.create ({
       width: 100,
       height: 50,
       backgroundColor: 'black'
+   },
+   imgHome:{
+      width: 50, 
+      marginLeft:10,
+      height: 50 ,
+      resizeMode:"stretch"
+   },
+   imgSearch:{
+      width: 50, 
+      marginLeft:10,
+      height: 50 ,
+      resizeMode:"stretch"
+   },
+   imgWishlist:{
+      width: 50, 
+      marginLeft:10,
+      height: 50 ,
+      resizeMode:"stretch"
+   },
+   imgProfile:{
+      width: 50, 
+      marginLeft:10,
+      height: 50 ,
+      resizeMode:"stretch"
    },
 })

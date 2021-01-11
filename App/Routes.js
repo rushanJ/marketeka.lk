@@ -21,91 +21,91 @@ import SellerDashboard from './Screens/SellerDashboard.js'
 const Routes = () => (
    <Router>
       <Scene key = "root">
-         <Scene key = "login" component = {Login}  initial = {true}   backButtonTextStyle = {{color:'#fff'}}
-                                                                                barButtonIconStyle={{ tintColor: '#fff' }}
+         <Scene key = "login" component = {Login}    backButtonTextStyle = {{color:'#000'}}
+                                                                                barButtonIconStyle={{ tintColor: '#000' }}
                                                                                 titleStyle = {{color : '#fff'}}
-                                                                                navigationBarStyle = {{backgroundColor : '#fff'}}
-                                                                                backButtonTintColor = '#fff'/> 
-         <Scene key = "register" component = {Register} title = "Register" backButtonTextStyle = {{color:'#fff'}}
-                                                                                barButtonIconStyle={{ tintColor: '#fff' }}
-                                                                                titleStyle = {{color : '#ffffff'}}
-                                                                                navigationBarStyle = {{backgroundColor : '#fff'}}
-                                                                                backButtonTintColor = '#fff'/> 
-         <Scene key = "home" component = {Home}   title = "Home" backButtonTextStyle = {{color:'#fff'}}
-                                                                                barButtonIconStyle={{ tintColor: '#fff' }}
+                                                                                navigationBarStyle = {{backgroundColor : '#000'}}
+                                                                                backButtonTintColor = '#fff' /> 
+         <Scene key = "register" component = {Register} title = "Register" backButtonTextStyle = {{color:'#000'}}
+                                                                                barButtonIconStyle={{ tintColor: '#000' }}
+                                                                                titleStyle = {{color : '#000000'}}
+                                                                                navigationBarStyle = {{backgroundColor : '#000'}}
+                                                                                backButtonTintColor = '#fff' /> 
+         <Scene key = "home" component = {Home} initial = {true}   title = "Home" backButtonTextStyle = {{color:'#000'}}
+                                                                                barButtonIconStyle={{ tintColor: '#000' }}
                                                                                 titleStyle = {{color : '#fff'}}
-                                                                                navigationBarStyle = {{backgroundColor : '#fff'}}
-                                                                                backButtonTintColor = '#fff'/>
-         <Scene key = "profile" component = {Profile}     title = "Profile" backButtonTextStyle = {{color:'#fff'}}
-                                                                                barButtonIconStyle={{ tintColor: '#fff' }}
+                                                                                navigationBarStyle = {{backgroundColor : '#000'}}
+                                                                                backButtonTintColor = '#000'/>
+         <Scene key = "profile" component = {Profile}     title = "Profile" backButtonTextStyle = {{color:'#000'}}
+                                                                                barButtonIconStyle={{ tintColor: '#000' }}
                                                                                 titleStyle = {{color : '#fff'}}
-                                                                                navigationBarStyle = {{backgroundColor : '#fff'}}
-                                                                                backButtonTintColor = '#fff'/> 
-         <Scene key = "orders" component = {UserOrders}  title = "Orders" backButtonTextStyle = {{color:'#fff'}}
-                                                                                barButtonIconStyle={{ tintColor: '#fff' }}
+                                                                                navigationBarStyle = {{backgroundColor : '#000'}}
+                                                                                backButtonTintColor = '#fff' /> 
+         <Scene key = "orders" component = {UserOrders}  title = "Orders" backButtonTextStyle = {{color:'#000'}}
+                                                                                barButtonIconStyle={{ tintColor: '#000' }}
                                                                                 titleStyle = {{color : '#fff'}}
-                                                                                navigationBarStyle = {{backgroundColor : '#fff'}}
-                                                                                backButtonTintColor = '#fff'/>  
-          <Scene key = "item" component = {Item}   title = "Item" backButtonTextStyle = {{color:'#fff'}}
-                                                                                barButtonIconStyle={{ tintColor: '#fff' }}
+                                                                                navigationBarStyle = {{backgroundColor : '#000'}}
+                                                                                backButtonTintColor = '#fff' />  
+          <Scene key = "item" component = {Item}   title = "Item" backButtonTextStyle = {{color:'#000'}}
+                                                                                barButtonIconStyle={{ tintColor: '#000' }}
                                                                                 titleStyle = {{color : '#fff'}}
-                                                                                navigationBarStyle = {{backgroundColor : '#fff'}}
-                                                                                backButtonTintColor = '#fff'/>                                                                      
-         <Scene key = "search" component = {Search}   title = "Search" backButtonTextStyle = {{color:'#fff'}}
-                                                                                barButtonIconStyle={{ tintColor: '#fff' }}
+                                                                                navigationBarStyle = {{backgroundColor : '#000'}}
+                                                                                backButtonTintColor = '#fff' />                                                                      
+         <Scene key = "search" component = {Search}   title = "Search" backButtonTextStyle = {{color:'#000'}}
+                                                                                barButtonIconStyle={{ tintColor: '#000' }}
                                                                                 titleStyle = {{color : '#fff'}}
-                                                                                navigationBarStyle = {{backgroundColor : '#fff'}}
-                                                                                backButtonTintColor = '#fff'/> 
-         <Scene key = "searchResult" component = {SearchResult}   title = "SearchResult" backButtonTextStyle = {{color:'#fff'}}
-                                                                                barButtonIconStyle={{ tintColor: '#fff' }}
+                                                                                navigationBarStyle = {{backgroundColor : '#000'}}
+                                                                                backButtonTintColor = '#fff' /> 
+         <Scene key = "searchResult" component = {SearchResult}   title = "SearchResult" backButtonTextStyle = {{color:'#000'}}
+                                                                                barButtonIconStyle={{ tintColor: '#000' }}
                                                                                 titleStyle = {{color : '#fff'}}
-                                                                                navigationBarStyle = {{backgroundColor : '#fff'}}
-                                                                                backButtonTintColor = '#fff'/>
-         <Scene key = "wishlist" component = {Wishlist}   title = "Wishlist" backButtonTextStyle = {{color:'#fff'}}
-                                                                                barButtonIconStyle={{ tintColor: '#fff' }}
+                                                                                navigationBarStyle = {{backgroundColor : '#000'}}
+                                                                                backButtonTintColor = '#000'/>
+         <Scene key = "wishlist" component = {Wishlist}   title = "Wishlist" backButtonTextStyle = {{color:'#000'}}
+                                                                                barButtonIconStyle={{ tintColor: '#000' }}
                                                                                 titleStyle = {{color : '#fff'}}
-                                                                                navigationBarStyle = {{backgroundColor : '#fff'}}
-                                                                                backButtonTintColor = '#fff'/>
-         <Scene key = "sellerDashboard" component = {SellerDashboard}   title = "SellerDashboard" backButtonTextStyle = {{color:'#fff'}}
-                                                                                barButtonIconStyle={{ tintColor: '#fff' }}
+                                                                                navigationBarStyle = {{backgroundColor : '#000'}}
+                                                                                backButtonTintColor = '#000'/>
+         <Scene key = "sellerDashboard" component = {SellerDashboard}   title = "SellerDashboard" backButtonTextStyle = {{color:'#000'}}
+                                                                                barButtonIconStyle={{ tintColor: '#000' }}
                                                                                 titleStyle = {{color : '#fff'}}
-                                                                                navigationBarStyle = {{backgroundColor : '#fff'}}
-                                                                                backButtonTintColor = '#fff'/>
-         <Scene key = "sellerItems" component = {SellerItems}  title = "SellerItems" backButtonTextStyle = {{color:'#fff'}}
-                                                                                barButtonIconStyle={{ tintColor: '#fff' }}
+                                                                                navigationBarStyle = {{backgroundColor : '#000'}}
+                                                                                backButtonTintColor = '#000'/>
+         <Scene key = "sellerItems" component = {SellerItems}  title = "SellerItems" backButtonTextStyle = {{color:'#000'}}
+                                                                                barButtonIconStyle={{ tintColor: '#000' }}
                                                                                 titleStyle = {{color : '#fff'}}
-                                                                                navigationBarStyle = {{backgroundColor : '#fff'}}
-                                                                                backButtonTintColor = '#fff'/>
-          <Scene key = "sellerNewItems" component = {SellerNewItems} title = "SellerNewItems" backButtonTextStyle = {{color:'#fff'}}
-                                                                                barButtonIconStyle={{ tintColor: '#fff' }}
+                                                                                navigationBarStyle = {{backgroundColor : '#000'}}
+                                                                                backButtonTintColor = '#000'/>
+          <Scene key = "sellerNewItems" component = {SellerNewItems} title = "SellerNewItems" backButtonTextStyle = {{color:'#000'}}
+                                                                                barButtonIconStyle={{ tintColor: '#000' }}
                                                                                 titleStyle = {{color : '#fff'}}
-                                                                                navigationBarStyle = {{backgroundColor : '#fff'}}
-                                                                                backButtonTintColor = '#fff'/>
-        {/* <Scene key = "sellerDashboard" component = {SellerDashboard}   title = "SellerDashboard" backButtonTextStyle = {{color:'#fff'}}
-                                                                                barButtonIconStyle={{ tintColor: '#fff' }}
+                                                                                navigationBarStyle = {{backgroundColor : '#000'}}
+                                                                                backButtonTintColor = '#000'/>
+        {/* <Scene key = "sellerDashboard" component = {SellerDashboard}   title = "SellerDashboard" backButtonTextStyle = {{color:'#000'}}
+                                                                                barButtonIconStyle={{ tintColor: '#000' }}
                                                                                 titleStyle = {{color : '#fff'}}
-                                                                                navigationBarStyle = {{backgroundColor : '#fff'}}
-                                                                                backButtonTintColor = '#fff'/>
-         <Scene key = "sellerDashboard" component = {SellerDashboard}   title = "SellerDashboard" backButtonTextStyle = {{color:'#fff'}}
-                                                                                barButtonIconStyle={{ tintColor: '#fff' }}
+                                                                                navigationBarStyle = {{backgroundColor : '#000'}}
+                                                                                backButtonTintColor = '#000'/>
+         <Scene key = "sellerDashboard" component = {SellerDashboard}   title = "SellerDashboard" backButtonTextStyle = {{color:'#000'}}
+                                                                                barButtonIconStyle={{ tintColor: '#000' }}
                                                                                 titleStyle = {{color : '#fff'}}
-                                                                                navigationBarStyle = {{backgroundColor : '#fff'}}
-                                                                                backButtonTintColor = '#fff'/>
-         <Scene key = "sellerDashboard" component = {SellerDashboard}   title = "SellerDashboard" backButtonTextStyle = {{color:'#fff'}}
-                                                                                barButtonIconStyle={{ tintColor: '#fff' }}
+                                                                                navigationBarStyle = {{backgroundColor : '#000'}}
+                                                                                backButtonTintColor = '#000'/>
+         <Scene key = "sellerDashboard" component = {SellerDashboard}   title = "SellerDashboard" backButtonTextStyle = {{color:'#000'}}
+                                                                                barButtonIconStyle={{ tintColor: '#000' }}
                                                                                 titleStyle = {{color : '#fff'}}
-                                                                                navigationBarStyle = {{backgroundColor : '#fff'}}
-                                                                                backButtonTintColor = '#fff'/>
-         <Scene key = "sellerDashboard" component = {SellerDashboard}   title = "SellerDashboard" backButtonTextStyle = {{color:'#fff'}}
-                                                                                barButtonIconStyle={{ tintColor: '#fff' }}
+                                                                                navigationBarStyle = {{backgroundColor : '#000'}}
+                                                                                backButtonTintColor = '#000'/>
+         <Scene key = "sellerDashboard" component = {SellerDashboard}   title = "SellerDashboard" backButtonTextStyle = {{color:'#000'}}
+                                                                                barButtonIconStyle={{ tintColor: '#000' }}
                                                                                 titleStyle = {{color : '#fff'}}
-                                                                                navigationBarStyle = {{backgroundColor : '#fff'}}
-                                                                                backButtonTintColor = '#fff'/>
-         <Scene key = "sellerDashboard" component = {SellerDashboard}   title = "SellerDashboard" backButtonTextStyle = {{color:'#fff'}}
-                                                                                barButtonIconStyle={{ tintColor: '#fff' }}
+                                                                                navigationBarStyle = {{backgroundColor : '#000'}}
+                                                                                backButtonTintColor = '#000'/>
+         <Scene key = "sellerDashboard" component = {SellerDashboard}   title = "SellerDashboard" backButtonTextStyle = {{color:'#000'}}
+                                                                                barButtonIconStyle={{ tintColor: '#000' }}
                                                                                 titleStyle = {{color : '#fff'}}
-                                                                                navigationBarStyle = {{backgroundColor : '#fff'}}
-                                                                                backButtonTintColor = '#fff'/>
+                                                                                navigationBarStyle = {{backgroundColor : '#000'}}
+                                                                                backButtonTintColor = '#000'/>
                                                                                  */}
 
 

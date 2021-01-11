@@ -7,7 +7,7 @@ const Register = () => {
       Actions.login()
    }
    return (
-      <View  style={{backgroundColor:'#fff'}}>
+      <View  style={{backgroundColor:'#000'}}>
       <ScreenContent/>
       <TouchableOpacity style = {{ margin: 128 }} onPress = {goToLogin}>
          <Text>Already Have An Account?</Text>

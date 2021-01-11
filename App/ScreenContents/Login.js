@@ -25,7 +25,7 @@ class Login extends Component {
    }
    login = (email, pass,props) => {
       
-    axios.post('http://192.168.8.113:3000/user/auth', {
+    axios.post('http://192.168.8.101:3000/user/auth', {
             email: email,
             password: pass
       })
@@ -56,7 +56,7 @@ class Login extends Component {
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = "Email"
-               placeholderTextColor = "#fff"
+               placeholderTextColor = "#000"
                autoCapitalize = "none"
                onChangeText = {this.handleEmail}/>
             
@@ -64,7 +64,7 @@ class Login extends Component {
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = "Password"
-               placeholderTextColor = "#fff"
+               placeholderTextColor = "#000"
                autoCapitalize = "none"
                onChangeText = {this.handlePassword}/>
             
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
    header: {
       
       fontSize: 40,
-      color: '#fff',
+      color: '#000',
       marginBottom: 20,
       marginLeft: 80,
     },
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
       fontSize: 20,
       alignItems: 'center',
       marginBottom: 10,
-      color: '#fff'
+      color: '#000'
   },
    input: {
       margin: 15,

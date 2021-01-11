@@ -25,13 +25,13 @@ state={
    getItem = () => {
       var letters = '0123456789ABCDEF';
        axios
-           .get("http://192.168.8.113:3000/item/")
+           .get("http://192.168.8.101:3000/item/")
            .then(data => {
              console.log(data.data.length);
              for (var i = 0; i < data.data.length; i++) {
-                 this.state.items.push({ name: data.data[i].name,description: data.data[i].description,qty: data.data[i].qty,price: data.data[i].sellingPrice, code: '#dce3e3' ,image:'http://192.168.8.113/marketEka/images/Products/'+data.data[i].id+'.jpg',id:data.data[i].id});
+                 this.state.items.push({ name: data.data[i].name,description: data.data[i].description,qty: data.data[i].qty,price: data.data[i].sellingPrice, code: '#dce3e3' ,image:'http://192.168.8.101/marketEka/images/Products/'+data.data[i].id+'.jpg',id:data.data[i].id});
              }
-             console.log(this.state.items);
+            //  console.log(this.state.items);
         })
            .catch(err => {
                console.log(err);
@@ -41,7 +41,24 @@ state={
     };
    render() {
       return (
+
+
          <View style = {styles.container}>
+
+
+            {this.state.items.length === 0 ? (
+                  <View><Image source = {{uri:'https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif'}}
+                  style = {styles.img}
+                  />
+                  
+                  </View>
+                  
+               ) : (
+               
+                        <View style = {styles.container}>
+                           <Text>sdfsdfsdfsd sdfsdfsdfsdfsdf sdfsdfsdf</Text>
+                    </View>
+               )}
             
             {/* <Text onPress ={()=>this.props.increseCounter()} style={styles.titleText}>{this.props.user.name}</Text>
             <Button text = {"Seller Area"} /> */}
@@ -99,12 +116,13 @@ const styles = StyleSheet.create({
     },
     itemName: {
       fontSize: 16,
-      color: '#fff',
+      color: '#000',
       fontWeight: '600',
     },
     itemCode: {
       fontWeight: '600',
       fontSize: 12,
-      color: '#fff',
+      color: '#000',
     },
+    
 })

@@ -14,6 +14,7 @@ Router.get("/", (req, res) => {
 })
 Router.post("/", urlencodedParser, (req, res) => {
     res.setHeader('Content-Type', 'application/json');
+    console.log(req.body);
     name = req.body.name;
     email = req.body.email;
     password = req.body.password;
@@ -29,7 +30,9 @@ Router.post("/", urlencodedParser, (req, res) => {
                 response = {
                     success: false,
                 };
+                console.log(err);
                 console.log(response);
+                console.log(req.body);
                 res.end(JSON.stringify(response));
             };
         })
