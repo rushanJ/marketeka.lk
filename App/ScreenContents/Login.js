@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ImageBackground,  View, Text, TouchableOpacity,  StyleSheet,Image } from 'react-native'
+import { ImageBackground,  View, Text, TouchableOpacity,  StyleSheet,Image,AsyncStorage } from 'react-native'
 import { Actions } from 'react-native-router-flux';
 import axios from 'axios';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -33,7 +33,9 @@ class Login extends Component {
        
         console.log(response.data.dataset[0].id);
         if(response.data.success){
-        
+           console.log(response.data.dataset[0]);
+         AsyncStorage.setItem('userId', ''+response.data.dataset[0].id);
+         AsyncStorage.setItem('userName', response.data.dataset[0].name);
             props.isLogedIn(response.data.dataset[0])
                Actions.home()
         }

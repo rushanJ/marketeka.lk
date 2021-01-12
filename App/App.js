@@ -9,8 +9,8 @@ import { Provider } from "react-redux";
    item:0,
    isloged:true,
    searchKey:'',
-   user:{id:33,name:'User 1'},
-   store:{id:3,name:'User 1'}
+   user:{id:18,name:'User 1'},
+   store:{id:3,name:'Seller1 1'}
 }
 const reducer=(state=initialState,action)=>{
      

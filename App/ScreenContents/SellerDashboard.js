@@ -65,7 +65,7 @@ export default connect(mapStateToProps,mapDispatchToProps)(Inputs)
 
 const styles = StyleSheet.create({
    titleText: {
-      color:'black',
+      color:'gray',
       fontSize: 70,
       fontWeight: "bold"
     }, 

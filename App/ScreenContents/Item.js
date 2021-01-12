@@ -16,7 +16,7 @@ class Inputs extends Component {
       this.getItem();
     }
      getItem = () => {
-        
+       
          axios
              .get("http://192.168.8.101:3000/item/"+this.props.item)
              .then(data => {
@@ -109,14 +109,15 @@ const styles = StyleSheet.create({
     },
     buyBtn: {
        borderWidth: 1,
-       padding: 25,
+       paddingBottom: 0,
+       paddingTop: 0,
        borderColor: 'black',
      
     }
     ,
     buyBtnImg: {
       width: 200,
-      margin:10,
-       height: 20 
+      
+       height: 40 
     }
 })

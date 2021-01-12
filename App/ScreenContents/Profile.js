@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity,  StyleSheet,Image } from 'react-native'
+import { View, Text, TouchableOpacity,  StyleSheet,Image ,AsyncStorage} from 'react-native'
 import { Actions } from 'react-native-router-flux';
 import axios from 'axios';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -12,16 +12,23 @@ class Inputs extends Component {
    
 state={
    tiles:[
-      { name: 'Orders', code: '#1abc9c' ,image:'https://icon-library.com/images/my-orders-icon/my-orders-icon-22.jpg',action:'orders'},
-      { name: 'Pending Payments', code: '#2ecc71' ,image:'https://icon-library.com/images/my-orders-icon/my-orders-icon-22.jpg',action:'home'},
-      { name: 'Wishlist', code: '#3498db' ,image:'https://icon-library.com/images/my-orders-icon/my-orders-icon-22.jpg',action:'profile'},
-      { name: 'Shipped', code: '#9b59b6' ,image:'https://icon-library.com/images/my-orders-icon/my-orders-icon-22.jpg',action:'orders' }
-    ]
+      { name: 'Orders', code: '#01777d' ,image:'http://critssl.com/marketEka/image/cart-icon.png',action:'orders'},
+      { name: 'Pending Payments', code: '#2ecc71' ,image:'http://critssl.com/marketEka/image/pay-icon.png',action:'home'},
+      { name: 'Wishlist', code: '#3498db' ,image:'http://critssl.com/marketEka/image/pen-paper-icon.png',action:'profile'},
+      { name: 'Shipped', code: '#5986bd' ,image:'http://critssl.com/marketEka/image/rider-icon.png',action:'orders' }
+    ],
+    'userId': '',
+    'userName': '',
+
+}
+componentDidMount = () => {
+   AsyncStorage.getItem('userId').then((value) => this.setState({ 'userId': value }))
+   AsyncStorage.getItem('userName').then((value) => this.setState({ 'userName': value }))
 }
    sellerAccount = (props) => {
       axios
            .post('http://192.168.8.101:3000/user/store', {
-            user: this.props.user.id
+            user: this.state.userId
                })
            .then(data => {
              console.log(data.data.success);
@@ -37,12 +44,23 @@ state={
    render() {
       return (
          <View style = {styles.container}>
-            <Text  style={styles.titleText}>{this.props.user.name}</Text>
-            <TouchableOpacity onPress ={()=>this.sellerAccount(this.props)}>
-            <Text style = {styles.button}>
-          Seller Account
-            </Text>
-         </TouchableOpacity>  
+            <View style = {styles.profileContainer}>
+                     <View style = {styles.redbox}>
+                     <Image source = {{uri:'http://critssl.com/marketEka/image/profile-icon.png'}}
+                  style = {styles.imgHome}
+                  />
+                     </View>
+                     <View style = {styles.bluebox}>
+                     {/* <Text  style={styles.titleText}>{this.props.user.name}</Text> */}
+                      <Text  style={styles.titleText}>{this.state.userName}</Text>
+                     <TouchableOpacity onPress ={()=>this.sellerAccount(this.props)}>
+                        <Text style = {styles.button}>Seller Account</Text>
+                     </TouchableOpacity>
+                     </View>
+                       
+                  </View>
+            
+         
          
             <FlatGrid
                itemDimension={130}
@@ -82,22 +100,31 @@ export default connect(mapStateToProps,mapDispatchToProps)(Inputs)
 
 const styles = StyleSheet.create({
    titleText: {
-      color:'black',
-      fontSize: 70,
-      fontWeight: "bold"
+      color:'gray',
+      fontSize: 30,
+      fontWeight: "bold",
+      paddingTop:30,
+      paddingLeft:10
+    }, 
+    button: {
+      color:'gray',
+      fontSize: 30,
+      fontWeight: "bold",
+      paddingTop:30,
+      paddingLeft:10
     }, 
     gridView: {
       marginTop: 10,
       flex: 1,
+      marginBottom:110
     },
     itemContainer: {
       justifyContent: 'flex-end',
       borderRadius: 5,
       padding: 10,
-   
     },
     itemName: {
-      fontSize: 16,
+      fontSize: 6,
       color: '#000',
       fontWeight: '600',
     },
@@ -106,4 +133,25 @@ const styles = StyleSheet.create({
       fontSize: 12,
       color: '#000',
     },
+    profileContainer: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'flex-end',
+   },
+   redbox: {
+      width: 100,
+      height: 100,
+   },
+   bluebox: {
+      width: 300,
+      height: 100,
+      marginBottom:50
+    },
+  
+   imgHome:{
+      width: 90, 
+      marginLeft:10,
+      height: 90 ,
+      resizeMode:"stretch"
+   },
 })

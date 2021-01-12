@@ -16,8 +16,9 @@ const goToView=(action)=>{
 const PresentationalComponent = (props) => {
    return (
       <View>
+        <TouchableOpacity onPress={()=>goToView(props.action)}>
         <Image source = {{uri:props.image}}style = {{ width: 150, height: 150 }}/>
-         <TouchableOpacity onPress={()=>goToView(props.action)}>
+         
             <Text style = {styles.button}>
             {props.text}
             </Text>
@@ -36,8 +37,10 @@ const styles = StyleSheet.create({
     },
     button: {
       alignItems: "center",
-      backgroundColor: "#DDDDDD",
-      padding: 10
+      backgroundColor: "#8a2560",
+      padding: 10,
+      fontSize:18
+     
     },
     countContainer: {
       alignItems: "center",
