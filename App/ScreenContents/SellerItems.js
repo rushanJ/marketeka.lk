@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, ScrollView,  StyleSheet,Image } from 'react-native'
+import { View, Text, ScrollView,  StyleSheet,Image,TouchableOpacity } from 'react-native'
 import { Actions } from 'react-native-router-flux';
 import axios from 'axios';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -41,6 +41,11 @@ state={
            });
 
     };
+    sellerNewItems = (props) => {
+      
+             Actions.sellerNewItems();
+       
+   }
    render() {
      
       return (
@@ -49,17 +54,24 @@ state={
 
             {this.state.data == 0 ? (
                <View style = {styles.container}>
-               
+              
         </View>
                   
                ) : (
                  <View><Image source = {{uri:'https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif'}}
                   style = {styles.img}
-                  />
                   
+                  />
+                  <TouchableOpacity onPress ={()=>this.sellerNewItems(this.props)}>
+                        <Text style = {styles.button}>New Item</Text>
+                     </TouchableOpacity>
                   </View>
                         
                )}
+
+               <TouchableOpacity onPress ={()=>this.sellerNewItems(this.props)}>
+                        <Text style = {styles.button}>New Item</Text>
+                     </TouchableOpacity>
             
             {/* <Text onPress ={()=>this.props.increseCounter()} style={styles.titleText}>{this.props.user.name}</Text>
             <Button text = {"Seller Area"} /> */}
@@ -128,6 +140,13 @@ const styles = StyleSheet.create({
       fontSize: 12,
       color: '#fff',
     },
+    button: {
+      color:'gray',
+      fontSize: 30,
+      fontWeight: "bold",
+      paddingTop:30,
+      paddingLeft:10
+    }, 
     img: {
       width: 200,
       

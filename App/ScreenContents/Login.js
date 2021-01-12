@@ -23,6 +23,10 @@ class Login extends Component {
    handlePassword = (text) => {
       this.setState({ password: text })
    }
+   componentDidMount = () => {
+      AsyncStorage.getItem('userId').then((value) =>  Actions.home())
+     
+   }
    login = (email, pass,props) => {
       
     axios.post('http://192.168.8.101:3000/user/auth', {

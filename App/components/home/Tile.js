@@ -25,7 +25,6 @@ const PresentationalComponent = (props) => {
       <View>
         <TouchableOpacity onPress={()=>goToView(props,props.id)}>
             <Image source = {{uri:props.image}}style = {{ width: 150, height: 150 }}/>
-            <Text style = {styles.button}>{props.image}</Text>
             <Text style = {styles.button}>{props.text}</Text>
             <Text style = {styles.button}> LKR {props.price}</Text>
             <Text style = {styles.button}>{props.qty} left</Text>

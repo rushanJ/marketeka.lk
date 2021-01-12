@@ -11,7 +11,7 @@ class Login extends Component {
    
    state = {
       user: this.props.store.id,
-      serialNumber: '',
+      serialNumber: '500',
       name: 'sfgdfg',
       qty: 10,
       supplierPrice:20,
@@ -47,7 +47,8 @@ class Login extends Component {
       this.setState({ supplier: text })
    }
    srote = (serialNumber, user,name, qty,supplierPrice, retailPrice,sellingPrice,description,supplier) => {
-    
+      
+   console.log(serialNumber);
       axios.post('http://192.168.8.101:3000/item', {
          serialNumber: serialNumber,
          shop: user,
@@ -93,7 +94,7 @@ class Login extends Component {
                placeholder = "Serial Number"
                placeholderTextColor = "#000"
                autoCapitalize = "none"
-               onChangeText = {this.handleEmail}/>
+               onChangeText = {this.handleSerialNumber}/>
             
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
