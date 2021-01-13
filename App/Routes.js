@@ -21,7 +21,7 @@ import SellerDashboard from './Screens/SellerDashboard.js'
 const Routes = () => (
    <Router>
       <Scene key = "root">
-         <Scene key = "login" component = {Login}  initial = {true} backButtonTextStyle = {{color:'#000'}}
+         <Scene key = "login" component = {Login}  backButtonTextStyle = {{color:'#000'}}
                                                                                 barButtonIconStyle={{ tintColor: '#000' }}
                                                                                 titleStyle = {{color : '#fff'}}
                                                                                 navigationBarStyle = {{backgroundColor : '#000'}}
@@ -41,7 +41,7 @@ const Routes = () => (
                                                                                 titleStyle = {{color : '#fff'}}
                                                                                 navigationBarStyle = {{backgroundColor : '#000'}}
                                                                                 backButtonTintColor = '#fff' /> 
-         <Scene key = "orders" component = {UserOrders}  title = "Orders" backButtonTextStyle = {{color:'#000'}}
+         <Scene key = "orders" component = {UserOrders}  initial = {true} title = "Orders" backButtonTextStyle = {{color:'#000'}}
                                                                                 barButtonIconStyle={{ tintColor: '#000' }}
                                                                                 titleStyle = {{color : '#fff'}}
                                                                                 navigationBarStyle = {{backgroundColor : '#000'}}

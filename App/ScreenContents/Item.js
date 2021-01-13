@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity,  StyleSheet,Image ,ScrollView} from 'react-native'
+import { View, Text, TouchableOpacity,  StyleSheet,Image ,ScrollView,AsyncStorage} from 'react-native'
 import { Actions } from 'react-native-router-flux';
 import axios from 'axios';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -9,17 +9,45 @@ import { connect } from "react-redux";
 
 class Inputs extends Component {
    state={
-      item:{}
+      item:{},
+    userId: '',
+    trollyId: '',
+
    }
    componentDidMount() {
-     
+      AsyncStorage.getItem('userId').then((value) => this.setState({ 'userId': value }))
+      AsyncStorage.getItem('trollyId').then((value) => this.setState({ 'trollyId': value }))
+      
       this.getItem();
     }
     buyProduct=()=>{
      
       Actions.checkout()
     }
+
+   
+    addToCart=()=>{
+     
+      axios.post('http://192.168.8.101:3000/order', {
+         user: this.state.userId,
+         item: this.props.item,   
+         trollyId: this.state.trollyId,       
+       })
+       .then(function (response) {
+         console.log(response.data.success);
+         if(response.data.success){
+            alert("Added To Cart");
+            // Actions.login()
+         }
+         else alert("Something Went Wrong")
+       })
+       .catch(function (error) {
+         console.log(error);
+       });
+    }
      getItem = () => {
+
+      console.log(this.props.item);
        
          axios
              .get("http://192.168.8.101:3000/item/"+this.props.item)
@@ -52,14 +80,18 @@ class Inputs extends Component {
             <Text  style={styles.titleText}><Image source = {{uri:'http://critssl.com/marketEka/image/seller-icon.png'}}
                   style = {styles.icon}
                   /> Seller : {this.state.item.store}</Text>
-
-            <TouchableOpacity onPress ={()=>this.buyProduct()}>
-               <Text style = {styles.buyBtn}>
-               <Image source = {{uri:'http://critssl.com/marketEka/image/buy-btn.png'}}
-                  style = {styles.buyBtnImg}
-                  /> 
-               </Text>
-            </TouchableOpacity>
+            <View style = {styles.orderContainer}>
+                  <TouchableOpacity onPress ={()=>this.buyProduct()}>
+                     <Image source = {{uri:'http://critssl.com/marketEka/image/buy-btn.png'}}
+                        style = {styles.buyBtnImg}
+                        /> 
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress ={()=>this.addToCart()}>
+                     <Image source = {{uri:'http://critssl.com/marketEka/image/add-to-cart-btn.png'}}
+                        style = {styles.buyBtnImg}
+                        /> 
+                  </TouchableOpacity>
+            </View>
             <Text  style={styles.titleText}> <Image source = {{uri:'http://critssl.com/marketEka/image/description-icon.png'}}
                   style = {styles.icon}
                   />  Description : 
@@ -86,6 +118,10 @@ function mapDispatchToProps(dispatch){
 export default connect(mapStateToProps,mapDispatchToProps)(Inputs)
 
 const styles = StyleSheet.create({
+   
+   container: {
+     
+    },
    titleText: {
       color:'gray',
       fontSize: 20,
@@ -124,4 +160,12 @@ const styles = StyleSheet.create({
       
        height: 40 
     }
+    ,orderContainer: {
+      flexDirection: 'row',
+      // justifyContent: 'space-between',
+      // alignItems: 'flex-end',
+      // backgroundColor: 'black',
+      // position: 'absolute',
+    
+   },
 })

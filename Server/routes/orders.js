@@ -50,7 +50,34 @@ Router.post("/search", urlencodedParser, (req, res) => {
 
 Router.post("/", urlencodedParser, (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    console.log(req);
+     console.log(req.body);
+    trollyId = req.body.trollyId;
+    userId = req.body.user;
+    item = req.body.item;
+    qty = 1;
+    price = 1500;
+   
+
+    mysqlConnection.query("INSERT INTO `order_item` (`trollyId`, `userId`, `item`, `qty`, `price`,  `status`)     VALUES (  '" + trollyId + "', '" + userId + "', '" + item + "', '" + qty + "', '" + price + "', 'PENDING'); ", (err, rows, fields) => {
+        if (!err) {
+            response = {
+                success: true,
+            };
+            console.log(response);
+            res.end(JSON.stringify(response));
+        } else {
+            response = {
+                success: false,
+            };
+            console.log(err);
+            res.end(JSON.stringify(response));
+        };
+    })
+
+})   
+Router.post("/wishlist", urlencodedParser, (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    console.log(req.body);
     // shop = req.body.shop;
     // serialNo = req.body.serialNumber;
     // name = req.body.name;
@@ -76,6 +103,5 @@ Router.post("/", urlencodedParser, (req, res) => {
     //         res.end(JSON.stringify(response));
     //     };
     // })
-
 })
 module.exports = Router;

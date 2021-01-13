@@ -25,6 +25,10 @@ componentDidMount = () => {
    AsyncStorage.getItem('userId').then((value) => this.setState({ 'userId': value }))
    AsyncStorage.getItem('userName').then((value) => this.setState({ 'userName': value }))
 }
+logOut = (props) => {
+   AsyncStorage.setItem('userId', '0');
+   Actions.login();
+}
    sellerAccount = (props) => {
       axios
            .post('http://192.168.8.101:3000/user/store', {
@@ -52,10 +56,16 @@ componentDidMount = () => {
                      </View>
                      <View style = {styles.bluebox}>
                      {/* <Text  style={styles.titleText}>{this.props.user.name}</Text> */}
+
                       <Text  style={styles.titleText}>{this.state.userName}</Text>
+                     
                      <TouchableOpacity onPress ={()=>this.sellerAccount(this.props)}>
                         <Text style = {styles.button}>Seller Account</Text>
                      </TouchableOpacity>
+                     <TouchableOpacity onPress ={()=>this.logOut(this.props)}>
+                        <Text > Log Out</Text>
+                     </TouchableOpacity>
+                     
                      </View>
                        
                   </View>
@@ -114,7 +124,7 @@ const styles = StyleSheet.create({
       paddingLeft:10
     }, 
     gridView: {
-      marginTop: 10,
+      marginTop: 40,
       flex: 1,
       marginBottom:110
     },

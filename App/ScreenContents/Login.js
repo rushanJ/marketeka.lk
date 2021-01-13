@@ -24,8 +24,8 @@ class Login extends Component {
       this.setState({ password: text })
    }
    componentDidMount = () => {
-      AsyncStorage.getItem('userId').then((value) =>  Actions.home())
-     
+      AsyncStorage.getItem('userId').then((value) => {if(value!='0')  Actions.home()})
+      
    }
    login = (email, pass,props) => {
       
@@ -39,6 +39,7 @@ class Login extends Component {
         if(response.data.success){
            console.log(response.data.dataset[0]);
          AsyncStorage.setItem('userId', ''+response.data.dataset[0].id);
+         AsyncStorage.setItem('trollyId', ''+response.data.dataset[0].trollyId);
          AsyncStorage.setItem('userName', response.data.dataset[0].name);
             props.isLogedIn(response.data.dataset[0])
                Actions.home()

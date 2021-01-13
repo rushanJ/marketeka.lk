@@ -41,6 +41,7 @@ export default connect(mapStateToProps,mapDispatchToProps)(App)
 
 const styles = StyleSheet.create({
    container: {
-      height: 710,
+      transform: [{ rotate: '90deg'}],
+      height: 500,
    }
  })
