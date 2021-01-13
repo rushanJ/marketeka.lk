@@ -51,7 +51,7 @@ Router.post("/search", urlencodedParser, (req, res) => {
 Router.post("/", urlencodedParser, (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     shop = req.body.shop;
-    serialNo = req.body.serialNo;
+    serialNo = req.body.serialNumber;
     name = req.body.name;
     qty = req.body.qty;
     supplierPrice = req.body.supplierPrice;

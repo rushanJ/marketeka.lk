@@ -45,7 +45,7 @@ Router.post("/auth", urlencodedParser, (req, res) => {
     email = req.body.email;
     password = req.body.password;
 
-    mysqlConnection.query("SELECT * FROM `user` WHERE `email`='" + email + "' AND `password`='" + password + "' ", (err, rows, fields) => {
+    mysqlConnection.query("SELECT * FROM `user` WHERE `email`='" + email + "' AND `pass`='" + password + "' ", (err, rows, fields) => {
         if (!err && rows[0] != undefined ) {
             response = {
                 success: true,

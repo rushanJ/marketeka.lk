@@ -15,6 +15,10 @@ class Inputs extends Component {
      
       this.getItem();
     }
+    buyProduct=()=>{
+     
+      Actions.checkout()
+    }
      getItem = () => {
        
          axios
@@ -49,7 +53,7 @@ class Inputs extends Component {
                   style = {styles.icon}
                   /> Seller : {this.state.item.store}</Text>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress ={()=>this.buyProduct()}>
                <Text style = {styles.buyBtn}>
                <Image source = {{uri:'http://critssl.com/marketEka/image/buy-btn.png'}}
                   style = {styles.buyBtnImg}

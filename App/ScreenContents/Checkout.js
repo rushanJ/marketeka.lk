@@ -6,21 +6,23 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import TextInput from 'react-native-textinput-with-icons'
 import Button from '../components/commen/Button'
 import { connect } from "react-redux";
+import { WebView } from 'react-native-webview';
 
-class Inputs extends Component {
-   
 
-   
+
+
+
+class App extends React.Component {
+  
+
    render() {
       return (
          <View style = {styles.container}>
-            <Text onPress ={()=>this.props.increseCounter()} style={styles.titleText}>{this.props.count}</Text>
-            <Button 
-             text = {"Button Text"} />
+             <WebView source={{ uri: 'http://192.168.8.101/marketEka/checkout.php'}} />
          </View>
-      )
+      );
    }
-} 
+}
 
 function mapStateToProps(state){
    return {
@@ -34,12 +36,11 @@ function mapDispatchToProps(dispatch){
    }
 } 
 
-export default connect(mapStateToProps,mapDispatchToProps)(Inputs)
+export default connect(mapStateToProps,mapDispatchToProps)(App)
+
 
 const styles = StyleSheet.create({
-   titleText: {
-      color:'white',
-      fontSize: 240,
-      fontWeight: "bold"
-    }
-})
+   container: {
+      height: 710,
+   }
+ })
