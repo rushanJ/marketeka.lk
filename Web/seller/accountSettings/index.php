@@ -11,8 +11,6 @@ include "../CommenLayouts/slideDrawer.php";
 
 <?php
 
-
-include "title.php";
 include "info.php";
 include "tileButtons.php";
 
