@@ -63,6 +63,6 @@ include "../CommenLayouts/sideDrawerEnd.php";
 
 	<?php
 
-include "js.php";
+nclude "js.php";
 include "../CommenLayouts/footer.php";
-?>
+?>i
