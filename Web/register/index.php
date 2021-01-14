@@ -41,9 +41,9 @@ include "../CommenLayouts/sideDrawerEnd.php";
 					</form>
 				  </div>
 				  <div class="form">
-					<h2>Create an account</h2>
+					<h2>Create an account </h2>
 					<form action="../php/register.php" method="post">
-					  <input type="text" name="name" placeholder="Name" required=" ">
+					  <input  type="text" name="name" placeholder="Name" required=" ">
 		
 					  <input type="email" name="email" placeholder="Email Address" required=" ">
 					  <input type="text" name="tp1" placeholder="Phone Number" required=" ">
@@ -109,7 +109,7 @@ include "../CommenLayouts/sideDrawerEnd.php";
 
 					</select>
 					<br/>
-					<input type="text" name="nearestTown" placeholder="neares tTown" required=" ">
+					<input class="w3-" type="text" name="nearestTown" placeholder="Nearest Town" required=" ">
 					  <input type="text" name="pass" placeholder="Password" required=" ">
 					  <input type="submit" value="Register">
 					</form>

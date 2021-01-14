@@ -14,7 +14,7 @@
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" class='w3-input'  name="pass" required>
         
-    <button type="submit" class="w3-button w3-red">Login</button>
+    <button type="submit" class="w3-button  w3-red">Login</button>
    
    
     

@@ -6,7 +6,7 @@
     <thead>
       <tr class="w3-black">
         <th>OrderId </th>
-        <th>Total Ammount</th>
+        <th>Total Amount</th>
         <th>Address</th>
         <th># of Items</th>
         <th>Status</th>
