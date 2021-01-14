@@ -1,4 +1,4 @@
-<div>
+<div  class="w3-half"  style="margin-left:25%">
 <br/>
 <div class="w3-card-4 w3-margin  w3-panel w3-border w3-round-xxlarge">
 
@@ -9,7 +9,7 @@
 
   <div class="container  ">
     <label class="w3-right" for="uname"><b>Shop Name</b></label>
-    <input class="w3-right w3-round-xlarge" type=" name="shopName" required>
+    <input class="w3-right w3-round-xlarge" type=" name="shopName" required><br/>
 
     <label for="psw"><b>Contact No</b></label>
     <input class=" w3-round-xxlarge" type="text" name="contactNo" required>
