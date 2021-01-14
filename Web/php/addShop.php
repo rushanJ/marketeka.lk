@@ -17,22 +17,24 @@ $deliveryChargeType=$_POST['deliveryChargeType'];
 $ownerEmail= $_POST['ownerEmail'];   
 $charge =$_POST["charge"];
 
-$sql = 
-"INSERT INTO `shop`(`id`, `name`, `contactNo`, `address`, `district`, `nearestTown`,`deliveryChargeType`,`charge`, `email`, `pass`, `ownerName`, `ownerAddress`, `NIC`, `br_no`, `ownerEmail`, `status`)
-                VALUES ('','$name','$contactNo','$address','$district','$nearestTown','$deliveryChargeType','$charge','$email','$pass','$ownerName','$ownerAddress','$NIC','$br_no','$ownerEmail','1')
-ON DUPLICATE KEY UPDATE
-`contactNo`='$contactNo',
-`ownerName`='$ownerName',
-`pass`='$pass',
-`ownerAddress`='$ownerAddress',
-`NIC`='$NIC',
-`br_no`='$br_no',
-`deliveryChargeType`=$deliveryChargeType,
-`charge`=$charge,
+// $sql = 
+// "INSERT INTO `shop`(`id`, `name`, `contactNo`, `address`, `district`, `nearestTown`,`deliveryChargeType`,`charge`, `email`, `pass`, `ownerName`, `ownerAddress`, `NIC`, `br_no`, `ownerEmail`, `status`)
+//                 VALUES ('','$name','$contactNo','$address','$district','$nearestTown','$deliveryChargeType','$charge','$email','$email','$ownerName','$ownerAddress','$NIC','$br_no','$ownerEmail','1')
+// ON DUPLICATE KEY UPDATE
+// `contactNo`='$contactNo',
+// `ownerName`='$ownerName',
+// `pass`='$pass',
+// `ownerAddress`='$ownerAddress',
+// `NIC`='$NIC',
+// `br_no`='$br_no',
+// `deliveryChargeType`=$deliveryChargeType,
+// `charge`=$charge,
 
-`ownerEmail`='$ownerEmail'
-;
-";
+// `ownerEmail`='$ownerEmail'
+// ;
+// ";
+
+$sql="CALL `addShop`('$name', '$contactNo', '$address', '$district', '$nearestTown', '$deliveryChargeType','$charge', '$email', '$email', '$ownerName', '$ownerAddress','$NIC', '$br_no', '$ownerEmail');";
 //echo $sql;
 if(mysqli_query($conn, $sql)){
     $myObj=new \stdClass();

@@ -17,14 +17,16 @@ $ownerAddress= $_POST['ownerAddress'];
 $NIC= $_POST['NIC'];
 $br_no= $_POST['br_no'];
 $ownerEmail= $_POST['ownerEmail'];
-    
+    echo $pass;
 
-$sql = 
-"INSERT INTO `shop`(`id`, `name`, `contactNo`, `address`, `district`, `nearestTown`, `deliveryChargeType`, `charge`, `email`, `pass`, `ownerName`, `ownerAddress`, `NIC`, `br_no`, `ownerEmail`, `status`) 
-            VALUES ('', '$shopName', '$contactNo', '$address', '$district', '$nearestTown', 'FIXED', '$charge', '$email', '$pass', '$ownerName', '$ownerAddress', '$NIC', '$br_no', '$sqlownerEmail', 1)
+// $sql = 
+// "INSERT INTO `shop`(`id`, `name`, `contactNo`, `address`, `district`, `nearestTown`, `deliveryChargeType`, `charge`, `email`, `pass`, `ownerName`, `ownerAddress`, `NIC`, `br_no`, `ownerEmail`, `status`) 
+//             VALUES ('', '$shopName', '$contactNo', '$address', '$district', '$nearestTown', 'FIXED', '$charge', '$email', '$pass', '$ownerName', '$ownerAddress', '$NIC', '$br_no', '$sqlownerEmail', 1)
  
-;
-";
+// ;
+// ";
+$sql="CALL `addShop`('$shopName', '$contactNo', '$address', '$district', '$nearestTown', 'FIXED','$charge', '$email', '$pass', '$ownerName', '$ownerAddress','$NIC', '$br_no', '$ownerEmail');";
+
 //echo $sql;
 if(mysqli_query($conn, $sql)){
     $id = $conn->insert_id;

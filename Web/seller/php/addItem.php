@@ -18,19 +18,21 @@ $imgType=strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
 
 
-$sql = 
-"INSERT INTO  `item`(`id`, `itemCode`, `shop`, `name`, `description`, `qty`, `measuringUnit`, `unitPrice`, `minPrice`, `purchasePrice`,`itemLock`,`imgType`) 
-                VALUES ('','$itemCode','$shop','$name','$description','$qty','$measuringUnit','$unitPrice','$minPrice','$purchasePrice','0','$imgType')
-ON DUPLICATE KEY UPDATE
-`name`='$name',
-`description`='$description',
-`qty`='$qty',
-`measuringUnit`='$measuringUnit',
-`unitPrice`='$unitPrice',
-`minPrice`='$minPrice',
-`purchasePrice`='$purchasePrice'
-;
-";
+// $sql = 
+// "INSERT INTO  `item`(`id`, `itemCode`, `shop`, `name`, `description`, `qty`, `measuringUnit`, `unitPrice`, `minPrice`, `purchasePrice`,`itemLock`,`imgType`) 
+//                 VALUES ('','$itemCode','$shop','$name','$description','$qty','$measuringUnit','$unitPrice','$minPrice','$purchasePrice','0','$imgType')
+// ON DUPLICATE KEY UPDATE
+// `name`='$name',
+// `description`='$description',
+// `qty`='$qty',
+// `measuringUnit`='$measuringUnit',
+// `unitPrice`='$unitPrice',
+// `minPrice`='$minPrice',
+// `purchasePrice`='$purchasePrice'
+// ;
+// ";
+$sql="CALL `addItem`('$itemCode', '$shop', '$name', '$description', '$qty','$measuringUnit', '$unitPrice', '$minPrice', '$purchasePrice', '$imgType');";
+
 
 if(mysqli_query($conn, $sql)){
     $id = $conn->insert_id;
@@ -84,6 +86,7 @@ if(mysqli_query($conn, $sql)){
     echo $myJSON;
    
 } else{
+    echo "Error: " . $sql . "<br>" . $conn->error;
     $myObj=new \stdClass();
     $myObj->status = 0;
     $myJSON = json_encode($myObj);

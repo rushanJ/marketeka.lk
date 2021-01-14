@@ -1,9 +1,9 @@
 
 <?php
-if (!isset($_SESSION["shopId"])) {
-	header("Location: ../login"); /* Redirect browser */
-    exit();
-}
+// if (!isset($_SESSION["userId"])) {
+// 	header("Location: ../login"); /* Redirect browser */
+//     exit();
+// }
 include "../CommenLayouts/header.php";
 
  include "../CommenLayouts/navBar.php";

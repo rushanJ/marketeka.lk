@@ -1,9 +1,10 @@
 <?php
 
     $itemName= $_REQUEST['itemName'];
-   
-    $sql = "SELECT `item`.`id`,`item`.`itemCode`,`item`.`shop`,`item`.`name`,`item`.`description`,`item`.`qty`,`item`.`measuringUnit`, `item`.`unitPrice` ,`item`.`imgType` ,`shop`.`name` as `sName`,`shop`.`nearestTown` FROM `item`,`shop` WHERE `shop`.`id`=`item`.`shop` AND `item`.`id` = '$itemName'  ORDER BY `item`.`id`";
+    
+    // $sql = "SELECT `item`.`id`,`item`.`itemCode`,`item`.`shop`,`item`.`name`,`item`.`description`,`item`.`qty`,`item`.`measuringUnit`, `item`.`unitPrice` ,`item`.`imgType` ,`shop`.`name` as `sName`,`shop`.`nearestTown` FROM `item`,`shop` WHERE `shop`.`id`=`item`.`shop` AND `item`.`id` = '$itemName'  ORDER BY `item`.`id`";
 
+    $sql="CALL `getItemInfo`($itemName);";
 
 //echo $sql;
 include "config.php";
@@ -28,7 +29,7 @@ if ($result->num_rows > 0) {
 
         
 <div style='margin-left:50px'>
-<h2>$name</h2>
+<h2>$name </h2>
 <div class=\"col-md-4 agileinfo_single_left\">
     <img id=\"example\" src=\"../images/$id.$imgType\" alt=\" \" class=\"img-responsive\" />
 </div>
