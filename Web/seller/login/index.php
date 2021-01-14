@@ -1,7 +1,8 @@
 
-<div  >
+<div class="w3-half"  style="margin-left:25%">
+</br/>
 <br/>
-<div class="w3-card-4 w3-padding-48 w3-margin  w3-panel w3-border w3-round-xxlarge  ">
+<div class="w3-card-4 w3-padding-48 w3-margin w3-panel w3-border w3-round-xxlarge  ">
 
 <form action="../php/auth.php" method="post" >
 <div class="w3-container w3-center">
@@ -21,9 +22,9 @@
     <br>
     <button type="submit" class="w3-button w3-green w3-button w3-round-xxlarge">Login</button>
    
-    <div class="container " style="background-color:#f1f1f1">
-    <a href="../register"><button type="button" class="cancelbtn w3-round-xxlarge">Register</button></a>
-    <span class="psw">Forgot <a href="#">password?</a></span>
+    <div class="container w3-center " style="background-color:#f1f1f1">
+    <a href="../register"><button type="button" class="cancelbtn w3-round-xxlarge">Register</button></a><br/>
+    <span class="psw ">Forgot <a href="#">password?</a></span>
   </div>
     
   </div> 
