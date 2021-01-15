@@ -12,10 +12,10 @@ session_start();
 <!-- header --> 
 <div class="agileits_header">
 		<div class="w3l_offers">
-			<a href="../index/">STAY AT HOME !</a>
+			<a href="products.html">STAY AT HOME !</a>
 		</div>
 		<div class="w3l_header_nav">
-			<a href="../index/">Home</a>
+			<a href="../">Home</a>
 		</div>
 		<div class="w3l_header_nav">
 			<a href="../seller">Seller Area</a>
@@ -30,41 +30,41 @@ session_start();
 		
 		<div class="w3l_header_right1">
 		
-			<div class="product_list_header">   
-				<a href="../cart">
-					<fieldset>
-						<input type="hidden" name="cmd" value="_cart" />
-						<input type="hidden" name="display" value="1" />
-						<input type="submit" name="submit" value="View your cart" class="button" />
-					</fieldset>
-				</a>
-			</div>
-			
-				<ul>
-					<li class="dropdown profile_details_drop">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i><span class="caret"></span></a>
-						<div class="mega-dropdown-menu">
-							<div class="w3ls_vegetables">
-								<ul class="dropdown-menu drp-mnu">
-								<?php
+		<div class="product_list_header">   
+			<a href="../cart">
+                <fieldset>
+                    <input type="hidden" name="cmd" value="_cart" />
+                    <input type="hidden" name="display" value="1" />
+                    <input type="submit" name="submit" value="View your cart" class="button" />
+                </fieldset>
+</a>
+		</div>
+		
+		<ul>
+				<li class="dropdown profile_details_drop">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i><span class="caret"></span></a>
+					<div class="mega-dropdown-menu">
+						<div class="w3ls_vegetables">
+							<ul class="dropdown-menu drp-mnu">
+							<?php
+							
+							if (isset($_SESSION["name"]))
+							{ 
+								echo "<li><a href='../myAccount'>".$_SESSION["name"]."</a></li>";
+								echo "<li><a href='../php/logout.php'>LogOut</a></li>";
+							}
+							else {
+								echo "<li><a href=\"../login\">Login</a></li> 
+								<li><a href=\"../register\">Sign Up</a></li>";
+							}
+							?>
 								
-								if (isset($_SESSION["name"]))
-								{ 
-									echo "<li><a href='../myAccount'>".$_SESSION["name"]."</a></li>";
-									echo "<li><a href='../php/logout.php'>LogOut</a></li>";
-								}
-								else {
-									echo "<li><a href=\"../login\">Login</a></li> 
-									<li><a href=\"../register\">Sign Up</a></li>";
-								}
-								?>
-									
-									
-								</ul>
-							</div>                  
-						</div>	
-					</li>
-				</ul>
+								
+							</ul>
+						</div>                  
+					</div>	
+				</li>
+			</ul>
 		</div>
 		<div class="clearfix"> </div>
 	</div>
@@ -84,7 +84,7 @@ session_start();
 	});
 	</script>
 <!-- //script-for sticky-nav --> 
-	<div class="logo_products" style="background-color: #eaeaea;">
+	<div class="logo_products" style="background-image: url('../images/banner/black.png');">
 		<div class="container">
 			<div class="w3ls_logo_products_left">
 				<a href="../index.php"><img src="../images/loginLogo.png"style="width: 250px;padding-left:10%;"></a>

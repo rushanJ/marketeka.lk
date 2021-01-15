@@ -12,7 +12,6 @@ include "../CommenLayouts/sideDrawerEnd.php";
 
 //include "../CommenLayouts/adPanel.php";
 
-
 ?>
 
 <!-- header -->
@@ -62,5 +61,8 @@ include "../CommenLayouts/sideDrawerEnd.php";
 	</div>
 
 
-	</body>
-</html>
+	<?php
+
+include "js.php";
+include "../CommenLayouts/footer.php";
+?>i
