@@ -71,6 +71,10 @@ i.badge.badge-notify.my-cart-badge {
     color: #fff;
 	top: 1em;
 }
+.product_list_header {
+	margin-right: 20px;
+
+}
 input[type="submit"],#PPMiniCart .minicart-submit,.w3ls_vegetables ul li a,input[type="reset"],.agileinfo_mail_grid_left ul li a,.events_bottom_left2 ul li a,.w3ls_service_grids1_right a,ul.agileits_social_icons li a,.w3l_banner_nav_right_banner_pet a,.w3ls_w3l_banner_nav_right_grid_head_grid ul li a,.products-breadcrumb ul li a,.w3_footer_grid ul li a,.w3l_fresh_vegetables_grid ul li a,.wthree_footer_copy p a,.agile_top_brand_left_grid1 .button,.w3ls_logo_products_left1 ul.special_items li a,.w3ls_logo_products_left1 ul.phone_email li a{
 	transition: .5s ease-in;
 	-webkit-transition: .5s ease-in;
@@ -94,8 +98,8 @@ input[type="submit"],#PPMiniCart .minicart-submit,.w3ls_vegetables ul li a,input
 }
 .w3l_search{
 	float: left;
-    width: 27%;
-    margin:.1em 0 0em 10em;
+    width: 30%;
+    margin:.3em 0 .3em 10em;
 }
 .w3l_search input[type="text"]{
 	outline: none;
@@ -105,9 +109,11 @@ input[type="submit"],#PPMiniCart .minicart-submit,.w3ls_vegetables ul li a,input
     width: 85%;
     background: #fff;
     border: 1px solid #999;
-    float: left;
+	float: left;
+	border-radius: 20px 0px 0px 20px;
 }
 .w3l_search input[type="submit"]{
+	border-radius: 0px 20px 20px 0px;
 	outline: none;
     padding: 10px 0 9px;
     width: 15%;
@@ -118,6 +124,15 @@ input[type="submit"],#PPMiniCart .minicart-submit,.w3ls_vegetables ul li a,input
 .w3l_search input[type="submit"]:hover{
     background: url(../images/img-sp.png) no-repeat 14px 5px #84C639;
 }
+.w3l_header_nav{
+	float: left;
+	padding: .75em 1.5em .75em 1.5em;
+}
+.w3l_header_nav a{
+	list-style-type: none;
+	color: #ffffff !important;
+
+}
 .w3l_header_right{
 	float: left;
     padding-left: 10em;
@@ -126,6 +141,7 @@ input[type="submit"],#PPMiniCart .minicart-submit,.w3ls_vegetables ul li a,input
     list-style-type: none;
 }
 .w3l_header_right1{
+	
 	float:right;
 }
 .w3l_header_right1 h2 a{
@@ -169,6 +185,9 @@ ul.dropdown-menu.drp-mnu li a i {
     background: url(../images/img-sp.png) no-repeat 54px 6px;
     line-height: 1;
     height: 97px;
+}
+.profile_details_drop {
+	margin-left: -3rem;
 }
 .profile_details_drop a {
     display: block;
@@ -241,7 +260,7 @@ ul.dropdown-menu.drp-mnu li a i {
 	float: left;
 /*-- agileits --*/
     width: 20%;
-    background: #f5f5f5;
+    background: #ebebeb;
 }
 .wthree_banner_bottom_left_grid_sub{
 	float: left;
@@ -269,7 +288,7 @@ ul.dropdown-menu.drp-mnu li a i {
 }
 .navbar-nav > li > a {
     color: #212121;
-    padding:10px 0px 10px 40px;
+    padding:25px 0px 25px 40px;
     border-bottom: 1px dotted #CDCDCD;
 }
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
@@ -696,7 +715,7 @@ ul.dropdown-menu.drp-mnu li a i {
 	margin:3em 0 0;
 }
 .top-brands{
-    background: #f5f5f5;
+    background: #f5f5f500;
 }
 .agile_top_brand_left_grid1 p{
 	color:#212121;
@@ -718,7 +737,7 @@ ul.dropdown-menu.drp-mnu li a i {
 /*-- cart --*/
 .product_list_header {
     float: left;
-    margin-left: 7em;
+    margin-left: -20em;
 }
 .snipcart-details {
     text-align: center;
@@ -1725,7 +1744,8 @@ button.submit.check_out{
 /*--Typography--*/
 .well {
     font-weight: 300;
-    font-size: 14px;
+	font-size: 14px;
+	background-color: #fff;
 }
 .list-group-item {
     font-weight: 300;
