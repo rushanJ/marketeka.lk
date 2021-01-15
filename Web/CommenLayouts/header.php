@@ -32,6 +32,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		});
 	});
 </script>
+<style>
+body{
+	background-image: url("../images/back.png");
+}
+</style>
 <!-- start-smoth-scrolling -->
 </head>
 <body>

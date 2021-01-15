@@ -9,10 +9,16 @@ session_start();
 					
 								
 ?>
-<!-- header -->
+<!-- header --> 
 <div class="agileits_header">
 		<div class="w3l_offers">
 			<a href="products.html">STAY AT HOME !</a>
+		</div>
+		<div class="w3l_header_nav">
+			<a href="../">Home</a>
+		</div>
+		<div class="w3l_header_nav">
+			<a href="../seller">Seller Area</a>
 		</div>
 		<div class="w3l_search">
 			<form action="#" method="post">
@@ -20,7 +26,11 @@ session_start();
 				<input type="submit" value=" ">
 			</form>
 		</div>
-		<div class="product_list_header">  
+		
+		
+		<div class="w3l_header_right1">
+		
+		<div class="product_list_header">   
 			<a href="../cart">
                 <fieldset>
                     <input type="hidden" name="cmd" value="_cart" />
@@ -29,8 +39,8 @@ session_start();
                 </fieldset>
 </a>
 		</div>
-		<div class="w3l_header_right">
-			<ul>
+		
+		<ul>
 				<li class="dropdown profile_details_drop">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i><span class="caret"></span></a>
 					<div class="mega-dropdown-menu">
@@ -56,9 +66,6 @@ session_start();
 				</li>
 			</ul>
 		</div>
-		<div class="w3l_header_right1">
-			<h2><a href="../seller">Seller Area</a></h2>
-		</div>
 		<div class="clearfix"> </div>
 	</div>
 <!-- script-for sticky-nav -->
@@ -76,8 +83,8 @@ session_start();
 		 
 	});
 	</script>
-<!-- //script-for sticky-nav -->
-	<div class="logo_products">
+<!-- //script-for sticky-nav --> 
+	<div class="logo_products" style="background-image: url('../images/banner/black.png');">
 		<div class="container">
 			<div class="w3ls_logo_products_left">
 				<a href="../index.php"><img src="../images/loginLogo.png"style="width: 250px;padding-left:10%;"></a>

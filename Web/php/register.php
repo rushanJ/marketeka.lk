@@ -29,11 +29,25 @@ if(mysqli_query($conn, $sql)){
    
    
 } else{
+    
     // $myObj=new \stdClass();
     // $myObj->status = 0;
     // $myJSON = json_encode($myObj);
     // echo $myJSON;
 }
+
+
+$params = array();
+
+	$stmt = sqlsrv_query( $conn, $sql, $params);
+	if( $stmt === false ) {
+		 die( print_r( sqlsrv_errors(), true));
+	}
+	else
+	{
+
+		echo "Record add successfully";
+	}
 
 mysqli_close($conn);
 header("Location: ../checkEmail"); /* Redirect browser */
