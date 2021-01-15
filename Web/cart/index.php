@@ -47,7 +47,7 @@ include "../CommenLayouts/sideDrawerEnd.php";
 							<th>Quantity</th>
 							<th>Product Name</th>
 							<th>Unit Price</th>
-							<th>Ammount</th>
+							<th>Amount</th>
 							<th>Remove</th>
 						</tr>
 					</thead>
@@ -65,8 +65,8 @@ include "../CommenLayouts/sideDrawerEnd.php";
 					<table class="table table-condensed">
     <thead>
       <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
+        <th>FirstName</th>
+        <th>LastName</th>
  
       </tr>
     </thead>
