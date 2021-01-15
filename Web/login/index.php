@@ -61,8 +61,5 @@ include "../CommenLayouts/sideDrawerEnd.php";
 	</div>
 
 
-	<?php
-
-nclude "js.php";
-include "../CommenLayouts/footer.php";
-?>i
+	</body>
+</html>
