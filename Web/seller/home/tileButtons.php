@@ -47,7 +47,7 @@
     
 
 
-    <div style="margin-left:15%" >
+    <div style="margin:5%" >
     <div class=" w3-card-4 w3-margin  w3-panel w3-border w3-round-xxlarge" >
     <canvas id="myChart" width="1000" height="400"></canvas>
 <script>
