@@ -1,5 +1,6 @@
 <div class=" w3-card-4 w3-padding-16 w3-panel w3-border w3-round-xlarge" style="margin:5%">
 <div class="w3-container">
+  
 <h1><b> Order History</b></h1><br/>
 <!-- <a href="../addNewItem"><p><button class="w3-button w3-blue w3-round-xxlarge">Add New Item</button></p></a> -->
 <div style="overflow-x:auto;">
