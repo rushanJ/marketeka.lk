@@ -4,8 +4,6 @@ import * as Yup from "yup";
 
 import Screen from "../components/Screen";
 import usersApi from "../api/users";
-import authApi from "../api/auth";
-import useAuth from "../auth/useAuth";
 import {
   ErrorMessage,
   Form,
@@ -14,6 +12,8 @@ import {
 } from "../components/forms";
 import useApi from "../hooks/useApi";
 import Loading from "../components/loadingAnim";
+import { logIn } from "../redux";
+import { useDispatch } from "react-redux";
 
 const validationSchema = Yup.object().shape({
   firstname: Yup.string().required().label("First Name"),
@@ -25,9 +25,8 @@ const validationSchema = Yup.object().shape({
 });
 
 function RegisterScreen() {
+  const dispatch = useDispatch();
   const registerApi = useApi(usersApi.register);
-  const loginApi = useApi(authApi.login);
-  const auth = useAuth();
   const [error, setError] = useState();
 
   const handleSubmit = async (userInfo) => {
@@ -42,16 +41,12 @@ function RegisterScreen() {
       return;
     }
 
-    const { data: authToken } = await loginApi.request(
-      userInfo.email,
-      userInfo.password
-    );
-    auth.logIn(authToken);
+    dispatch(logIn({ email: userInfo.email, password: userInfo.password }));
   };
 
   return (
     <>
-      <Loading visible={registerApi.loading || loginApi.loading} />
+      <Loading visible={registerApi.loading} />
       <ScrollView>
         <Screen style={styles.container}>
           <Form

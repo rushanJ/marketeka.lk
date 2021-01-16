@@ -1,11 +1,15 @@
 import React from "react";
+import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
+import LoginScreen from "../screens/LoginScreen";
+import RegisterScreen from "../screens/RegisterScreen";
 import AccountScreen from "../screens/AccountScreen";
 import HomeScreen from "../screens/HomeScreen";
 import WhateverScreen from "../screens/WhateverScreen";
 
+const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const AppNavigator = () => (
@@ -46,4 +50,20 @@ const AppNavigator = () => (
   </Tab.Navigator>
 );
 
-export default AppNavigator;
+const Navigator = () => (
+  <Stack.Navigator>
+    <Stack.Screen
+      name="Login"
+      component={LoginScreen}
+      options={{ headerShown: false }}
+    />
+    <Stack.Screen name="Register" component={RegisterScreen} />
+    <Stack.Screen
+      name="Inside"
+      component={AppNavigator}
+      options={{ headerShown: false }}
+    />
+  </Stack.Navigator>
+);
+
+export default Navigator;
