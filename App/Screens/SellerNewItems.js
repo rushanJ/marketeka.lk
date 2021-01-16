@@ -2,6 +2,7 @@ import React from 'react'
 import { TouchableOpacity, Text,View ,ScrollView } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import ScreenContent from "../ScreenContents/SellerNewItems";
+import NavigationBar from "../components/commen/navigationBar";
 const Home = () => {
    const goToRegister = () => {
       Actions.register()
@@ -11,6 +12,7 @@ const Home = () => {
            <ScrollView>
              <ScreenContent/>
              </ScrollView>
+             <NavigationBar/>
        </View>
    )
 }

@@ -13,7 +13,8 @@ class Inputs extends Component {
 state={
    items:[
   
-   ]
+   ],
+   data:1
 }
    goToRegister = () => {
    Actions.register()
@@ -25,15 +26,14 @@ state={
    getItem = () => {
       var letters = '0123456789ABCDEF';
        axios
-           .post('http://192.168.8.101:3000/user/wishlist', {
-            user: this.props.user.id
-               })
+           .get("http://192.168.8.101:3000/user/wishlist")
            .then(data => {
-             //console.log(data.data.dataset[0]);
-             for (var i = 0; i < data.data.dataset.length; i++) {
-                 this.state.items.push({ name: data.data.dataset[i].name,description: data.data.dataset[i].description,qty: data.data.dataset[i].qty,price: data.data.dataset[i].sellingPrice, code: '#dce3e3' ,image:'http://192.168.8.101/marketEka/images/Products/'+data.data.dataset[i].id+'.jpg',id:data.data.dataset[i].id});
+             console.log(data.data.length);
+             for (var i = 0; i < data.data.length; i++) {
+                 this.state.items.push({ name: data.data[i].name,description: data.data[i].description,qty: data.data[i].qty,price: data.data[i].sellingPrice, code: '#dce3e3' ,image:'http://192.168.8.101/marketEka/images/Products/'+data.data[i].id+'.jpg',id:data.data[i].id});
              }
-             console.log(this.state.items);
+             this.setState({data:0});
+            //  console.log(this.state.items);
         })
            .catch(err => {
                console.log(err);
@@ -42,11 +42,27 @@ state={
 
     };
    render() {
+     
       return (
          <View style = {styles.container}>
+
+
+            {this.state.data == 0 ? (
+               <View style = {styles.container}>
+               
+        </View>
+                  
+               ) : (
+                 <View><Image source = {{uri:'https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif'}}
+                  style = {styles.img}
+                  />
+                  
+                  </View>
+                        
+               )}
             
-            {/* <Text style={styles.titleText}>Wishlist</Text> */}
-            {/* <Button text = {"Seller Area"} /> */}
+            {/* <Text onPress ={()=>this.props.increseCounter()} style={styles.titleText}>{this.props.user.name}</Text>
+            <Button text = {"Seller Area"} /> */}
             <ScrollView>
             <FlatGrid
                itemDimension={130}
@@ -64,12 +80,16 @@ state={
             />
          </ScrollView>
          </View>
+         
       )
-   }
+   
+}
+
 } 
 
 function mapStateToProps(state){
    return {
+      count:state.count,
       user:state.user
    }
 } 
@@ -100,12 +120,17 @@ const styles = StyleSheet.create({
     },
     itemName: {
       fontSize: 16,
-      color: '#000',
+      color: '#fff',
       fontWeight: '600',
     },
     itemCode: {
       fontWeight: '600',
       fontSize: 12,
-      color: '#000',
+      color: '#fff',
     },
+    img: {
+      width: 200,
+      
+       height: 40 
+    }
 })

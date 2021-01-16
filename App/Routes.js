@@ -13,7 +13,7 @@ import SellerDashboard from './Screens/SellerDashboard.js'
  import SellerItems from './Screens/SellerItems.js'
  import SellerNewItems from './Screens/SellerNewItems.js'
  import Checkout from './Screens/Checkout.js'
-// import SearchResult from './Screens/SearchResult.js'
+ import UserPendingPayments from './Screens/UserPendingPayments.js'
 // import SearchResult from './Screens/SearchResult.js'
 // import SearchResult from './Screens/SearchResult.js'
 
@@ -21,7 +21,7 @@ import SellerDashboard from './Screens/SellerDashboard.js'
 const Routes = () => (
    <Router>
       <Scene key = "root">
-         <Scene key = "login" component = {Login}  backButtonTextStyle = {{color:'#000'}}
+         <Scene key = "login" component = {Login} initial = {true}   backButtonTextStyle = {{color:'#000'}}
                                                                                 barButtonIconStyle={{ tintColor: '#000' }}
                                                                                 titleStyle = {{color : '#fff'}}
                                                                                 navigationBarStyle = {{backgroundColor : '#000'}}
@@ -41,7 +41,7 @@ const Routes = () => (
                                                                                 titleStyle = {{color : '#fff'}}
                                                                                 navigationBarStyle = {{backgroundColor : '#000'}}
                                                                                 backButtonTintColor = '#fff' /> 
-         <Scene key = "orders" component = {UserOrders}  initial = {true} title = "Orders" backButtonTextStyle = {{color:'#000'}}
+         <Scene key = "orders" component = {UserOrders}  title = "Orders" backButtonTextStyle = {{color:'#000'}}
                                                                                 barButtonIconStyle={{ tintColor: '#000' }}
                                                                                 titleStyle = {{color : '#fff'}}
                                                                                 navigationBarStyle = {{backgroundColor : '#000'}}
@@ -76,22 +76,27 @@ const Routes = () => (
                                                                                 titleStyle = {{color : '#fff'}}
                                                                                 navigationBarStyle = {{backgroundColor : '#000'}}
                                                                                 backButtonTintColor = '#000'/>
-          <Scene key = "sellerNewItems" component = {SellerNewItems}   title = "SellerNewItems" backButtonTextStyle = {{color:'#000'}}
+         <Scene key = "sellerNewItems" component = {SellerNewItems}  title = "SellerNewItems" backButtonTextStyle = {{color:'#000'}}
                                                                                 barButtonIconStyle={{ tintColor: '#000' }}
                                                                                 titleStyle = {{color : '#fff'}}
                                                                                 navigationBarStyle = {{backgroundColor : '#000'}}
                                                                                 backButtonTintColor = '#000'/>
-        <Scene key = "checkout" component = {Checkout}   title = "SellerDashboard" backButtonTextStyle = {{color:'#000'}}
+         <Scene key = "checkout" component = {Checkout}   title = "SellerDashboard" backButtonTextStyle = {{color:'#000'}}
                                                                                 barButtonIconStyle={{ tintColor: '#000' }}
                                                                                 titleStyle = {{color : '#fff'}}
                                                                                 navigationBarStyle = {{backgroundColor : '#000'}}
                                                                                 backButtonTintColor = '#000'/>
-        {/*  <Scene key = "sellerDashboard" component = {SellerDashboard}   title = "SellerDashboard" backButtonTextStyle = {{color:'#000'}}
+         <Scene key = "userPendingPayments" component = {UserPendingPayments}    title = "UserPendingPayments" backButtonTextStyle = {{color:'#000'}}
                                                                                 barButtonIconStyle={{ tintColor: '#000' }}
                                                                                 titleStyle = {{color : '#fff'}}
                                                                                 navigationBarStyle = {{backgroundColor : '#000'}}
                                                                                 backButtonTintColor = '#000'/>
-         <Scene key = "sellerDashboard" component = {SellerDashboard}   title = "SellerDashboard" backButtonTextStyle = {{color:'#000'}}
+         <Scene key = "wishlist" component = {Wishlist}   title = "UserPendingPayments" backButtonTextStyle = {{color:'#000'}}
+                                                                                barButtonIconStyle={{ tintColor: '#000' }}
+                                                                                titleStyle = {{color : '#fff'}}
+                                                                                navigationBarStyle = {{backgroundColor : '#000'}}
+                                                                                backButtonTintColor = '#000'/>
+        {/* <Scene key = "sellerDashboard" component = {SellerDashboard}   title = "SellerDashboard" backButtonTextStyle = {{color:'#000'}}
                                                                                 barButtonIconStyle={{ tintColor: '#000' }}
                                                                                 titleStyle = {{color : '#fff'}}
                                                                                 navigationBarStyle = {{backgroundColor : '#000'}}

@@ -63,14 +63,20 @@ state={
                   
                   />
                   <TouchableOpacity onPress ={()=>this.sellerNewItems(this.props)}>
-                        <Text style = {styles.button}>New Item</Text>
+                  {/* <Image source = {{uri:'http://critssl.com/marketEka/image/buy-btn.png'}}
+                        style = {styles.buyBtnImg}
+                        />  */}
+                        <Text style = {styles.button}>New Itemsdfsdfsdf</Text>
                      </TouchableOpacity>
                   </View>
                         
                )}
 
                <TouchableOpacity onPress ={()=>this.sellerNewItems(this.props)}>
-                        <Text style = {styles.button}>New Item</Text>
+                        {/* <Text style = {styles.button}>New Items</Text> */}
+                         <Image source = {{uri:'http://critssl.com/marketEka/image/add-item-btn.png'}}
+                        style = {styles.buyBtnImg}
+                        /> 
                      </TouchableOpacity>
             
             {/* <Text onPress ={()=>this.props.increseCounter()} style={styles.titleText}>{this.props.user.name}</Text>
@@ -148,6 +154,11 @@ const styles = StyleSheet.create({
       paddingLeft:10
     }, 
     img: {
+      width: 200,
+      
+       height: 40 
+    } ,
+    buyBtnImg: {
       width: 200,
       
        height: 40 

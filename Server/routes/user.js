@@ -64,27 +64,13 @@ Router.post("/auth", urlencodedParser, (req, res) => {
     })
 })
 
-Router.post("/wishlist", urlencodedParser, (req, res) => {
+Router.get("/wishlist", urlencodedParser, (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
-    key = req.body.key;
-    console.log(key );
-    mysqlConnection.query("SELECT * FROM `item`", (err, rows, fields) => {
-        if (!err && rows[0] != undefined ) {
-            response = {
-                success: true,
-                dataset: rows
-            };
-        
-            console.log(rows[0] );
-            res.end(JSON.stringify(response));
-        } else {console.log(err)
-            response = {
-                success: false
-               
-            };
-            res.end(JSON.stringify(response));
-        }
+    
+    mysqlConnection.query("SELECT * FROM `item` WHERE id>31 limit 3", (err, rows, fields) => {
+        if (!err) res.send(rows);
+        else console.log(err)
     })
 })
 

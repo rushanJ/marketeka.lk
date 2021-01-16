@@ -87,76 +87,114 @@ class Login extends Component {
    render() {
       return (
          <View style = {styles.container}>
-            <Text > { this.state.user }</Text>
-
+            {/* <Text > { this.state.user }</Text> */}
+            <View style={styles.inputView} >
+            <Image source = {{uri:'https://img.icons8.com/ios/452/numbers-input-form.png'}}
+                  style = {styles.imgHome}
+                  />
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = "Serial Number"
-               placeholderTextColor = "#000"
+               placeholderTextColor = "white"
                autoCapitalize = "none"
                onChangeText = {this.handleSerialNumber}/>
-            
+               </View>
+            <View style={styles.inputView} >
+            <Image source = {{uri:'https://cdn.iconscout.com/icon/free/png-512/label-name-text-tag-filter-item-price-7-3240.png'}}
+                  style = {styles.imgHome}
+                  />
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = "name"
                placeholderTextColor = "#000"
                autoCapitalize = "none"
                onChangeText = {this.handleName}/>
-            
+              </View>
+            <View style={styles.inputView} >
+            <Image source = {{uri:'https://image.flaticon.com/icons/png/128/2104/2104046.png'}}
+                  style = {styles.imgHome}
+                  />
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = "Qty "
                placeholderTextColor = "#000"
                autoCapitalize = "none"
                onChangeText = {this.handleQty}/>
-
+  </View>
+            <View style={styles.inputView} >
+            <Image source = {{uri:'https://image.flaticon.com/icons/png/512/8/8817.png'}}
+                  style = {styles.imgHome}
+                  />
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = "Supplier Price "
                placeholderTextColor = "#000"
                autoCapitalize = "none"
                onChangeText = {this.handleSupplierPrice}/> 
-
+  </View>
+            <View style={styles.inputView} >
+            <Image source = {{uri:'https://image.flaticon.com/icons/png/512/8/8817.png'}}
+                  style = {styles.imgHome}
+                  />
              <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = "retailPrice"
-               placeholderTextColor = "#000"
+               placeholderTextColor = "#fff"
                autoCapitalize = "none"
                onChangeText = {this.handleRetailPrice}/>
             
-
+            </View>
+            <View style={styles.inputView} >
+            <Image source = {{uri:'https://image.flaticon.com/icons/png/512/8/8817.png'}}
+                  style = {styles.imgHome}
+                  />
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = "Selling Price"
                placeholderTextColor = "#9a73ef"
                autoCapitalize = "none"
                onChangeText = {this.handleSellingPrice}/>
-
+  </View>
+            <View style={styles.inputView} >
+            <Image source = {{uri:'https://cdn0.iconfinder.com/data/icons/free-daily-icon-set/512/TaskStroke-512.png'}}
+                  style = {styles.imgHome}
+                  />
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = "description "
                placeholderTextColor = "#9a73ef"
                autoCapitalize = "none"
                onChangeText = {this.handleDescription}/>
-
+  </View>
+            <View style={styles.inputView} >
+            <Image source = {{uri:'https://img.icons8.com/plasticine/2x/supplier.png'}}
+                  style = {styles.imgHome}
+                  />
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = "Supplier "
                placeholderTextColor = "#9a73ef"
                autoCapitalize = "none"
                onChangeText = {this.handleSupplier}/>
-            
+              </View>
+            <View style={styles.inputView} >
+
+            <TouchableOpacity
+               style = {styles.submitButton}
+               >
+               <Text style = {styles.submitButtonText}> Upload Image  </Text>
+            </TouchableOpacity>
             <TouchableOpacity
                style = {styles.submitButton}
                onPress = {
                   () => this.srote(this.state.serialNumber, this.state.user, this.state.name, this.state.qty, this.state.supplierPrice, this.state.retailPrice, this.state.sellingPrice, this.state.description, this.state.supplier)
                }>
-               <Text style = {styles.submitButtonText}> Submit </Text>
+               <Text style = {styles.submitButtonText}> Add </Text>
             </TouchableOpacity>
 
             
 
-           
+            </View>
          </View>
       )
    }
@@ -179,14 +217,16 @@ export default connect(mapStateToProps,mapDispatchToProps)(Login)
 
 const styles = StyleSheet.create({
    container: {
-      paddingTop: 23
+      paddingTop: 23,
+      marginLeft:20,
+      height:750
    },
    input: {
       margin: 15,
       height: 40,
       borderColor: '#000',
       borderWidth: 1,
-      color: 'black'
+      color: 'black',
    },
    submitButton: {
       backgroundColor: '#7a42f4',
@@ -197,5 +237,22 @@ const styles = StyleSheet.create({
    },
    submitButtonText:{
       color: 'white'
-   }
+   },imgHome:{
+      width: 30, 
+      marginRight:10,
+      height: 30 ,
+      resizeMode:"stretch"
+   },
+   inputView:{
+      width:"80%",
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'flex-end',
+      // backgroundColor:"#465881",
+      // borderRadius:25,
+      // height:50,
+      // marginBottom:20,
+      // justifyContent:"center",
+      // padding:20
+    }
 })

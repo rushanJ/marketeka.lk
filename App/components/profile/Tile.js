@@ -8,9 +8,18 @@ const goToView=(action)=>{
             
             Actions.orders();
             break;
-    
+        case 'userPendingPayments':
+            
+          Actions.userPendingPayments();
+              break;
+        case 'wishlist':
+            
+                Actions.wishlist();
+                    break;
         default:
             break;
+
+            
     }
 }
 const PresentationalComponent = (props) => {
