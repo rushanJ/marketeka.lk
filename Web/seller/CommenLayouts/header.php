@@ -53,6 +53,12 @@ img.avatar {
   width: 25%;
   border-radius: 35%;
 }
+img.navatar {
+    padding-top: 1px;
+  width: 4%;
+  height:4%;
+  border-radius: 5%;
+}
 
 .container {
   padding: 16px;
