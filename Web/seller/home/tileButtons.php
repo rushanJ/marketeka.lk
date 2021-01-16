@@ -49,9 +49,9 @@
     </div>
 
 
-    <div  class="w3-half "  style="margin-left:25%">
+   
     <div class=" w3-card-4 w3-margin  w3-panel w3-border w3-round-xxlarge" >
-    <canvas id="myChart" width="400" height="400"></canvas>
+    <canvas id="myChart" width="50%" height="20%"></canvas>
 <script>
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
@@ -94,8 +94,6 @@ var myChart = new Chart(ctx, {
 });
 </script>
 
-
-</div>
     </div>
 
 
@@ -107,7 +105,7 @@ var myChart = new Chart(ctx, {
       <div class="w3-card w3-margin  w3-panel w3-border w3-round-xxlarge">
         <div class="w3-clear"></div>
      
-        <canvas id="myChart-1" ></canvas>
+        <canvas id="myChart-1"  height="200" ></canvas>
 <script>
 var ctx = document.getElementById('myChart-1').getContext('2d');
 var myLineChart = new Chart(ctx, {
@@ -142,16 +140,16 @@ var myLineChart = new Chart(ctx, {
       <div class=" w3-card w3-margin  w3-panel w3-border w3-round-xxlarge">
         <div class="w3-clear"></div>
      
-        <canvas id="myChart-2" ></canvas>
+        <canvas id="myChart-2" height="200" ></canvas>
 <script>
 var ctx = document.getElementById('myChart-2').getContext('2d');
 var myLineChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['1st Week', '2nd Week', '3rd Week','4th Week'],
+        labels: ['1st Week', '2nd Week', '3rd Week','4th Week','5th Week'],
         datasets: [{
             label: 'Last Month Sales',
-            data: [12,14,14,17],
+            data: [5,7,9,13,13],
             borderColor: [
               'rgba(160, 20, 12, 8)',
                 
@@ -178,7 +176,7 @@ var myLineChart = new Chart(ctx, {
       <div class="w3-card w3-margin  w3-panel w3-border w3-round-xxlarge">
         <div class="w3-clear"></div>
      
-        <canvas id="myChart-3" ></canvas>
+        <canvas id="myChart-3" height="200"></canvas>
 <script>
 var ctx = document.getElementById('myChart-3').getContext('2d');
 var myLineChart = new Chart(ctx, {
