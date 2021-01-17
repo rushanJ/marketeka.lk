@@ -24,7 +24,7 @@ const Home = () => {
                   />
          </TouchableOpacity>
          <TouchableOpacity style = {styles.box} onPress={Actions.wishlist} >
-         <Image source = {{uri:'http://critssl.com/marketEka/image/wishlist-icon.png'}}
+         <Image source = {{uri:'http://critssl.com/marketEka/image/wishlist-icon2.png'}}
                   style = {styles.imgWishlist}
                   />
          </TouchableOpacity>

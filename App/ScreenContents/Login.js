@@ -10,7 +10,7 @@ import { connect } from "react-redux";
 import Card from '../components/Card';
 
 
-const image = { uri: "https://seohacker.wpengine.com/wp-content/uploads/2019/12/E-Commerce-SEO_Best-Practices-for-a-Successful-Online-Shop-1024x768.jpg" };
+const image = { uri: "http://critssl.com/marketEka/image/bg-img.jpg" };
 class Login extends Component {
    
    state = {
@@ -56,31 +56,36 @@ class Login extends Component {
       return (
          <ImageBackground  source={image} style={styles.image}>
          <View style = {styles.container}>
+         
          <Card>
+         <Image source = {{uri:'http://critssl.com/marketEka/image/logo.png'}}style = {{ width: 300, height: 150, marginBottom:0 , marginLeft:20}}/>
          <Text style={styles.header}>Login</Text>
         <View>
          <Text style={styles.text}>Email</Text>
+         <View style={styles.inputView} >
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = "Email"
                placeholderTextColor = "#000"
                autoCapitalize = "none"
                onChangeText = {this.handleEmail}/>
+            </View>
             
-            <Text style={styles.text}>Name</Text>
+            <Text style={styles.text}>Password</Text>
+            <View style={styles.inputView} >
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = "Password"
                placeholderTextColor = "#000"
                autoCapitalize = "none"
                onChangeText = {this.handlePassword}/>
-            
+            </View>
             <TouchableOpacity
                style = {styles.submitButton}
                onPress = {
                   () => this.login(this.state.email, this.state.password,this.props)
                }>
-               <Text style = {styles.submitButtonText}> Submit </Text>
+               <Text style = {styles.submitButtonText}> Login </Text>
             </TouchableOpacity>
 
             <TouchableOpacity
@@ -149,31 +154,65 @@ const styles = StyleSheet.create({
       color: 'white'
    },
    submitButton: {
-      backgroundColor: '#e91e63',
-      padding: 10,
-      width: '30%',
-      marginTop: 10,
-      marginLeft: 90,
-      marginBottom: 20,
-      borderRadius: 30,
-      height: 40,
-      color: 'white'
+      // backgroundColor: '#e91e63',
+      // padding: 10,
+      // width: '30%',
+      // marginTop: 10,
+       marginLeft: 30,
+      // marginBottom: 20,
+      // borderRadius: 30,
+      // height: 40,
+      // color: 'white'
+      width:"80%",
+      backgroundColor:"#fb5b5a",
+      borderRadius:25,
+      height:50,
+      alignItems:"center",
+      justifyContent:"center",
+      marginTop:40,
+      marginBottom:10
    },
    submitButtonText:{
       color: 'white',
       fontSize: 20,
    },
    registerButton: {
-      backgroundColor: '#9c27b0',
-      padding: 10,
-      marginLeft: 80,
-      width: '40%',
-      borderRadius: 30,
-      height: 40,
-      color: 'white'
+      // backgroundColor: '#9c27b0',
+      // padding: 10,
+      // marginLeft: 80,
+      // width: '40%',
+      // borderRadius: 30,
+      // height: 40,
+      // color: 'white'
+      marginLeft: 30,
+      width:"80%",
+      backgroundColor:"#9c27b0",
+      borderRadius:25,
+      height:30,
+      alignItems:"center",
+      justifyContent:"center",
+      marginTop:40,
+      marginBottom:10
    },
+   image: {
+      height: '100%',
+      width: '100%',
+      resizeMode: "cover",
+      justifyContent: "center",
+
+        },
    registerButtonText: {
       color: 'white',
       fontSize: 20,
    }
+   // ,
+   // inputView:{
+   //    width:"80%",
+   //    backgroundColor:"#465881",
+   //    borderRadius:25,
+   //    height:50,
+   //    marginBottom:20,
+   //    justifyContent:"center",
+   //    padding:20
+   //  }
 })

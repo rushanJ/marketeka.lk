@@ -9,7 +9,7 @@ const Register = () => {
    return (
       <View  style={{backgroundColor:'#000'}}>
       <ScreenContent/>
-      <TouchableOpacity style = {{ margin: 128 }} onPress = {goToLogin}>
+      <TouchableOpacity  onPress = {goToLogin}>
          <Text>Already Have An Account?</Text>
       </TouchableOpacity>
       </View>

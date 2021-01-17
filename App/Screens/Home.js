@@ -11,7 +11,7 @@ const Home = () => {
    }
    
    return (
-       <View  style={{backgroundColor:'#f78da7'}}>
+       <View  >
            <View>
              <ScreenContent/>
            </View>

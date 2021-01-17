@@ -36,10 +36,10 @@ session_start();
 
 <div class="agileits_header">
 		<div class="w3l_offers">
-			<a href="../index/">STAY AT HOME !</a>
+			<a href="products.html">STAY AT HOME !</a>
 		</div>
 		<div class="w3l_header_nav">
-			<a href="../index/">Home</a>
+			<a href="../">Home</a>
 		</div>
 		<div class="w3l_header_nav">
 			<a href="../seller">Seller Area</a>
@@ -54,41 +54,41 @@ session_start();
 		
 		<div class="w3l_header_right1">
 		
-			<div class="product_list_header">   
-				<a href="../cart">
-					<fieldset>
-						<input type="hidden" name="cmd" value="_cart" />
-						<input type="hidden" name="display" value="1" />
-						<input type="submit" name="submit" value="View your cart" class="button" />
-					</fieldset>
-				</a>
-			</div>
-			
-				<ul>
-					<li class="dropdown profile_details_drop">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i><span class="caret"></span></a>
-						<div class="mega-dropdown-menu">
-							<div class="w3ls_vegetables">
-								<ul class="dropdown-menu drp-mnu">
-								<?php
+		<div class="product_list_header">   
+			<a href="../cart">
+                <fieldset>
+                    <input type="hidden" name="cmd" value="_cart" />
+                    <input type="hidden" name="display" value="1" />
+                    <input type="submit" name="submit" value="View your cart" class="button" />
+                </fieldset>
+</a>
+		</div>
+		
+		<ul>
+				<li class="dropdown profile_details_drop">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i><span class="caret"></span></a>
+					<div class="mega-dropdown-menu">
+						<div class="w3ls_vegetables">
+							<ul class="dropdown-menu drp-mnu">
+							<?php
+							
+							if (isset($_SESSION["name"]))
+							{ 
+								echo "<li><a href='../myAccount'>".$_SESSION["name"]."</a></li>";
+								echo "<li><a href='../php/logout.php'>LogOut</a></li>";
+							}
+							else {
+								echo "<li><a href=\"../login\">Login</a></li> 
+								<li><a href=\"../register\">Sign Up</a></li>";
+							}
+							?>
 								
-								if (isset($_SESSION["name"]))
-								{ 
-									echo "<li><a href='../myAccount'>".$_SESSION["name"]."</a></li>";
-									echo "<li><a href='../php/logout.php'>LogOut</a></li>";
-								}
-								else {
-									echo "<li><a href=\"../login\">Login</a></li> 
-									<li><a href=\"../register\">Sign Up</a></li>";
-								}
-								?>
-									
-									
-								</ul>
-							</div>                  
-						</div>	
-					</li>
-				</ul>
+								
+							</ul>
+						</div>                  
+					</div>	
+				</li>
+			</ul>
 		</div>
 		<div class="clearfix"> </div>
 	</div>
@@ -108,7 +108,33 @@ session_start();
 	});
 	</script>
 <!-- //script-for sticky-nav --> 
+<<<<<<< HEAD
 	
+=======
+	<div class="logo_products" style="background-image: url('../images/banner/black.png');">
+		<div class="container">
+			<div class="w3ls_logo_products_left">
+				<a href="../index.php"><img src="../images/loginLogo.png"style="width: 250px;padding-left:10%;"></a>
+			</div>
+			<img src="../images/banner/5.jpg"style="width: 400px;hight: 100px;">
+			<div class="w3ls_logo_products_left1">
+				<ul class="special_items">
+					<!-- <li><a href="events.html">Events</a><i>/</i></li> -->
+					<!--<li><a href="about.html">About Us</a><i>/</i></li> -->
+					<!-- <li><a href="products.html">Best Deals</a><i>/</i></li> -->
+					<!--<li><a href="services.html">Services</a></li>-->
+				</ul>
+			</div>
+			<div class="w3ls_logo_products_left1">
+				<ul class="phone_email">
+					<!--<li><i class="fa fa-phone" aria-hidden="true"></i>Call us (+94)71 95 05 180</li>-->
+					<!--<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:store@grocery.com">store@critssl.com</a></li>-->
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+>>>>>>> 1bedd530cb450ca2f25d8920aa8be9b37922f0ed
 <!-- //header -->
 
 

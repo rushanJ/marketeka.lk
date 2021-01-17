@@ -24,13 +24,15 @@ class Login extends Component {
    render() {
       return (
          <View style = {styles.container}>
+            <View style={{  width:250 }}>
+            <Text>Search</Text>
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = "Key"
                placeholderTextColor = "#9a73ef"
                autoCapitalize = "none"
                onChangeText = {this.handleKey}/>
-            
+            </View>
            
             
             <TouchableOpacity
@@ -38,7 +40,7 @@ class Login extends Component {
                onPress = {
                   () => this.search(this.state.key,this.props)
                }>
-               <Text style = {styles.submitButtonText}> Submit </Text>
+               <Text style = {styles.submitButtonText}> Search </Text>
             </TouchableOpacity>
 
             
@@ -67,20 +69,33 @@ const styles = StyleSheet.create({
    container: {
       paddingTop: 0,
       paddingBottom: 100,
+      // marginLeft:30,
+      // marginRight:30,
+      padding:30,
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'flex-end',
+      position: 'relative',
+      marginBottom:550
+
    },
    input: {
       margin: 15,
       height: 40,
       borderColor: '#000',
       borderWidth: 1,
-      color: 'white'
+      color: 'white',
+      width:20
+     
    },
    submitButton: {
       backgroundColor: '#7a42f4',
       padding: 10,
       margin: 15,
       height: 40,
-      color: 'white'
+      color: 'white',
+      borderRadius:10
+      
    },
    submitButtonText:{
       color: 'white'
