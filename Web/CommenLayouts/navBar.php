@@ -10,6 +10,30 @@ session_start();
 								
 ?>
 <!-- header --> 
+<div class="logo_products" style="background-image: url(../images/banner/black.png);">
+		<div class="container">
+			<div class="w3ls_logo_products_left">
+				<a href="../index.php"><img src="../images/loginLogo.png"style="width: 250px;padding-left:10%;"></a>
+			</div>
+			<img src="../images/banner/5.jpg"style="width: 400px;hight: 100px;">
+			<div class="w3ls_logo_products_left1">
+				<ul class="special_items">
+					<!-- <li><a href="events.html">Events</a><i>/</i></li> -->
+					<!--<li><a href="about.html">About Us</a><i>/</i></li> -->
+					<!-- <li><a href="products.html">Best Deals</a><i>/</i></li> -->
+					<!--<li><a href="services.html">Services</a></li>-->
+				</ul>
+			</div>
+			<div class="w3ls_logo_products_left1">
+				<ul class="phone_email">
+					<!--<li><i class="fa fa-phone" aria-hidden="true"></i>Call us (+94)71 95 05 180</li>-->
+					<!--<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:store@grocery.com">store@critssl.com</a></li>-->
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+
 <div class="agileits_header">
 		<div class="w3l_offers">
 			<a href="../index/">STAY AT HOME !</a>
@@ -84,29 +108,7 @@ session_start();
 	});
 	</script>
 <!-- //script-for sticky-nav --> 
-	<div class="logo_products" style="background-color: #eaeaea;">
-		<div class="container">
-			<div class="w3ls_logo_products_left">
-				<a href="../index.php"><img src="../images/loginLogo.png"style="width: 250px;padding-left:10%;"></a>
-			</div>
-			<img src="../images/banner/5.jpg"style="width: 400px;hight: 100px;">
-			<div class="w3ls_logo_products_left1">
-				<ul class="special_items">
-					<!-- <li><a href="events.html">Events</a><i>/</i></li> -->
-					<!--<li><a href="about.html">About Us</a><i>/</i></li> -->
-					<!-- <li><a href="products.html">Best Deals</a><i>/</i></li> -->
-					<!--<li><a href="services.html">Services</a></li>-->
-				</ul>
-			</div>
-			<div class="w3ls_logo_products_left1">
-				<ul class="phone_email">
-					<!--<li><i class="fa fa-phone" aria-hidden="true"></i>Call us (+94)71 95 05 180</li>-->
-					<!--<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:store@grocery.com">store@critssl.com</a></li>-->
-				</ul>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-	</div>
+	
 <!-- //header -->
 
 
