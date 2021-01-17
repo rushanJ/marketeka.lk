@@ -4,7 +4,7 @@
 				<div class="flexslider">
 					<ul class="slides">
 						<li>
-							<div class="w3l_banner_nav_right_banner">
+							<div class="w3l_banner_nav_right_banner1">
 								<!--<h3>Register your <span>Shop</span> and help.</h3>-->
 								<div class="more">
 									<!--<a href="../seller" class="button--saqui button--round-l button--text-thick" data-text="Register">Seller Area</a>-->S
