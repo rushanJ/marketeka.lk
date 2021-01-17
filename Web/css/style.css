@@ -94,13 +94,8 @@ input[type="submit"],#PPMiniCart .minicart-submit,.w3ls_vegetables ul li a,input
 	font-size: 1.2em;
     color: #fff;
     text-decoration: none;
-<<<<<<< HEAD
     padding: .75em 3em;
     background: #6f7766;
-=======
-    padding: .5em 3em;
-    background: #84C639;
->>>>>>> 1bedd530cb450ca2f25d8920aa8be9b37922f0ed
 	display:block;
 }
 .w3l_search{
