@@ -8,7 +8,7 @@
                     <h4><b>Log In</b></h4>
                     <p>Shopped with us before? Log in with your details</p>
                     <br>
-                    <p>Don't have an account? <a href="./register">Register</a></p>
+                    <p>Don't have an account? <a href="../register">Register</a></p>
 
                 </div>
             </div>

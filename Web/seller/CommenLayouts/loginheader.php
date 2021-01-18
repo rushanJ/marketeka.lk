@@ -69,7 +69,7 @@
 .admin-form .form-control {
     border-radius: 0px 20px;
     position: relative;
-    font-size: small;
+    font-size: smaller;
     height: auto;
     padding: 10px;
     -webkit-box-sizing: border-box;
@@ -82,8 +82,16 @@
 .admin-form input[type="text"] {
     border-radius: 0px 20px;
     margin-bottom: -1px;
-    font-size: small;
-}.admin-form input[type="submit"] {
+    font-size: smaller;
+}
+.admin-form textarea {
+    height: 6rem;
+    max-height: 6rem;
+    border-radius: 0px 20px;
+    margin-bottom: -1px;
+    font-size: smaller;
+}
+.admin-form input[type="submit"] {
     border-radius: 0px 20px;
     padding: 5px 25px;
     background-color: #00bcae;
