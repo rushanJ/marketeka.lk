@@ -1,39 +1,33 @@
 
-<div class="w3-half"  style="margin-left:25%">
-</br/>
-<br/>
-<div class="w3-card-4 w3-padding-48 w3-margin w3-panel w3-border w3-round-xxlarge  ">
+<div class="admin-login">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4" id="adminl">
+                <div class="admin-login-header">
+                <img src="../../images/loginLogo.png" alt="Avatar" class="avatar" style="width: 120px;">
+                <br><br>
+                    <h4><b>Log In</b></h4>
+                    <p>Shopped with us before? Log in with your details</p>
+                    <br>
+                    <p>Don't have an account? <a href="./register">Register</a></p>
 
-<form action="../php/auth.php" method="post" >
-<div class="w3-container w3-center">
- 
-	<!-- <img src="../../images/loginLogo.png" alt="Avatar"  class="avater"> -->
-  <img src="../../images/loginLogo.png" alt="Avatar" class="avatar">
-  
-  <h1 ><b>Login</b></h1>
-  </div> 
-  <div class="container ">
-    <label  for="uname" ><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" class='w3-input w3-round-xxlarge  ' name="userName" required>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8" id="adminr">
+                <div class="admin-form">
+                    <form method="POST" action="../php/auth.php">
+                        <label for="uname" >Username</label>
+                        <input type="text" class="form-control" placeholder="Enter Username" name="userName" required><br>
 
-    <label  for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" class='w3-input w3-round-xxlarge '  name="pass" required>
-
-    <br>
-    <button type="submit" class="w3-button w3-green w3-button w3-round-xxlarge">Login</button>
-   
-    <div class="container w3-center " style="background-color:#f1f1f1">
-    <a href="../register"><button type="button" class="cancelbtn w3-round-xxlarge">Register</button></a><br/>
-    <span class="psw ">Forgot <a href="#">password?</a></span>
-  </div>
-    
-  </div> 
-  </form>
- 
-
- 
-
-
-</div>
-</div>
-
+                        <label for="Password">Password</label>
+                        <input type="text" class="form-control" placeholder="Enter Password" name="pass" required><br>
+                    
+                       
+                        <br><br>
+                        <div class="text-center">
+                            <input class="btn btn-success" type="submit" value="Login">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
