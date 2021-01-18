@@ -128,7 +128,10 @@ input[type="submit"],#PPMiniCart .minicart-submit,.w3ls_vegetables ul li a,input
 }
 .w3l_header_nav{
 	float: left;
-	padding: .75em 1.5em .75em 1.5em;
+	padding: 1em 1.5em;
+}
+.w3l_header_nav:hover{
+	background-color: rgb(54, 54, 54);
 }
 .w3l_header_nav a{
 	list-style-type: none;
@@ -166,9 +169,9 @@ ul.dropdown-menu.drp-mnu li:first-child{
 	margin-bottom: 0em;
 }
 ul.dropdown-menu.drp-mnu li a {
-	color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
 	padding: .5em .5em;
-	background-color: #00bcae;
+	background-color: #ffffff;
 }
 ul.dropdown-menu.drp-mnu li a i {
 	padding: 1.5em 1em;
@@ -302,13 +305,13 @@ ul.dropdown-menu.drp-mnu li a i {
 .w3ls_vegetables_menu {
     left: 25%;
     border: none;
-    padding: 0em;
+    padding: 1em;
 }
 .w3ls_vegetables ul li {
     list-style-type: none;
 }
 .w3ls_vegetables ul li:first-child {
-    margin-bottom:0em;
+    margin-bottom:.5em;
 }
 .w3ls_vegetables ul li a {
     color: #000000;
