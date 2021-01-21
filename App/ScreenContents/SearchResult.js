@@ -44,6 +44,21 @@ state={
    render() {
       return (
          <View style = {styles.container}>
+
+
+            {this.state.data == 0 ? (
+               <View style = {styles.container}>
+               
+        </View>
+                  
+               ) : (
+                 <View><Image source = {{uri:'https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif'}}
+                  style = {styles.img}
+                  />
+                  
+                  </View>
+                        
+               )}
             
             {/* <Text onPress ={()=>this.props.increseCounter()} style={styles.titleText}>{this.props.user.name}</Text>
             <Button text = {"Seller Area"} /> */}
@@ -64,6 +79,7 @@ state={
             />
          </ScrollView>
          </View>
+         
       )
    }
 } 

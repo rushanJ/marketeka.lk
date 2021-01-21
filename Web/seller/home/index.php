@@ -12,9 +12,9 @@ include "../CommenLayouts/slideDrawer.php";
 <?php
 
 
-include "info.php";
-include "tileButtons.php";
 
+include "tileButtons.php";
+include "info.php";
 ?>
 
 <?php

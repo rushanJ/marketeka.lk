@@ -12,10 +12,10 @@ class Inputs extends Component {
    
 state={
    tiles:[
-      { name: 'Orders', code: '#01777d' ,image:'http://critssl.com/marketEka/image/cart-icon.png',action:'orders'},
-      { name: 'Pending Payments', code: '#2ecc71' ,image:'http://critssl.com/marketEka/image/pay-icon.png',action:'userPendingPayments'},
-      { name: 'Wishlist', code: '#3498db' ,image:'http://critssl.com/marketEka/image/pen-paper-icon.png',action:'wishlist'},
-      { name: 'Shipped', code: '#5986bd' ,image:'http://critssl.com/marketEka/image/rider-icon.png',action:'orders' }
+      { name: 'Orders',image:'http://critssl.com/marketEka/image/cart-icon.png',action:'orders'},
+      { name: 'Pending Payments', image:'http://critssl.com/marketEka/image/pay-icon.png',action:'userPendingPayments'},
+      { name: 'Wishlist', image:'http://critssl.com/marketEka/image/pen-paper-icon.png',action:'wishlist'},
+      { name: 'Shipped', image:'http://critssl.com/marketEka/image/rider-icon.png',action:'orders' }
     ],
     'userId': '',
     'userName': '',

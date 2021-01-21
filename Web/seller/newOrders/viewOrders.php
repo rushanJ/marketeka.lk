@@ -9,9 +9,9 @@
         <th>Order ID </th>
         <th>Total Amount</th>
         <th>Address</th>
-        <th># of Items</th>
+       
         <th>Status</th>
-        <th>Remarks</th>
+        <th>TimeStamp</th>
         <th>Actions</th>
       </tr>
   

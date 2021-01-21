@@ -9,32 +9,47 @@ header("Content-Type: application/json; charset=UTF-8");
 session_start();
 $item= $_POST['itemId'];
 $qty= $_POST['qty'];
-$address= $_POST['address'];
+// $address= $_POST['address'];
 $trolleyId= $_SESSION['trolleyId'];
 $userID= $_SESSION['userId'];
-
-
 $sql = 
-"INSERT INTO  `orders` (`id`, `item`, `qty`,`trolleyId`, `address`, `status`, `timeStamp`,`user`)
-                VALUES ('','$item','$qty','$trolleyId','','PENDING',CURRENT_TIMESTAMP,'$userID')
-ON DUPLICATE KEY UPDATE
-`qty`='$qty',
-`timeStamp`=CURRENT_TIMESTAMP
+"[dbo].[addToCart]
+@item = $item,
+@qty = $qty,
+@trollyId = $trolleyId
 ;
 ";
-//echo $sql;
-if(mysqli_query($conn, $sql)){
-    $myObj=new \stdClass();
-    $myObj->status = 1;
-    $myJSON = json_encode($myObj);
-    echo $myJSON;
+echo $sql;
+
+$params = array();
+
+    $stmt = sqlsrv_query( $conn, $sql, $params);
+    
+	if( $stmt === false ) {
+		 die( print_r( sqlsrv_errors(), true));
+	}
+	else
+	{
+        echo "Record add successfully";
+        $row = sqlsrv_fetch_array($stmt); 
+        echo "ROW INSERTED WITH ID : " . $row["id"];
+        echo "<br>";
+	}
+
+
+
+// if(mysqli_query($conn, $sql)){
+//     $myObj=new \stdClass();
+//     $myObj->status = 1;
+//     $myJSON = json_encode($myObj);
+//     echo $myJSON;
    
-} else{
-    $myObj=new \stdClass();
-    $myObj->status = 0;
-    $myJSON = json_encode($myObj);
-    echo $myJSON;
-}
+// } else{
+//     $myObj=new \stdClass();
+//     $myObj->status = 0;
+//     $myJSON = json_encode($myObj);
+//     echo $myJSON;
+// }
 
 mysqli_close($conn);
 header("Location: ../cart"); /* Redirect browser */

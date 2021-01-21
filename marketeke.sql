@@ -56,7 +56,7 @@ CREATE TABLE info (
 
 CREATE TABLE stats (
   id int NOT NULL IDENTITY(1,1) UNIQUE,
-  date date NOT NULL PRIMARY KEY,
+  date date NOT NULL PRIMARY KEY DEFAULT getdate,
   orders INT NOT NULL,
   shops INT NOT NULL,
   users INT NOT NULL,
@@ -86,15 +86,47 @@ CREATE TABLE orders (
   CONSTRAINT orders_ibfk_2 FOREIGN KEY ([user]) REFERENCES [user] (id)
 );
 
+CREATE TABLE [order] (
+  id int NOT NULL IDENTITY(1,1) UNIQUE,
+  trollyId INT NOT NULL,
+  [user] INT NOT NULL,
+  timeStamp datetime2(0) NOT NULL DEFAULT GETDATE(),
+  total decimal(9,2) NOT NULL,
+  address text NOT NULL,
+  contactNo INT NOT NULL,
+  paymentStatus varchar(10) NOT NULL,
+  type INT NOT NULL
+  CONSTRAINT order_ibfk_1 FOREIGN KEY ([user]) REFERENCES [user] (id)
+)
+
+
+CREATE TABLE order_item (
+  id int NOT NULL IDENTITY(1,1) UNIQUE,
+  item INT NOT NULL,
+  qty DECIMAL(5,2) NOT NULL,
+  trollyId INT NOT NULL,
+  status varchar(30) NOT NULL,
+  timeStamp datetime2(0) NOT NULL DEFAULT GETDATE(),
+  [order] INT ,
+   CONSTRAINT order_item_ibfk_1 FOREIGN KEY ([order]) REFERENCES [order] (id),
+  CONSTRAINT order_itm_fk_2 FOREIGN KEY (item) REFERENCES item (id)
+);
+
+
 ALTER TABLE item
   ADD PRIMARY KEY (itemCode,shop);
 
 ALTER TABLE itemStat
   ADD PRIMARY KEY (date,item);
 
-
 ALTER TABLE orders
   ADD PRIMARY KEY (item,trolleyId);
+
+ALTER TABLE [order]
+   ADD PRIMARY KEY (trollyId,[user])
+
+ALTER TABLE order_item
+  ADD PRIMARY KEY (item,trollyId);
 
 
 CREATE  PROCEDURE addItem @itemCode VARCHAR(30) ,@shop INT, @name VARCHAR(70), @description TEXT, @qty INT, @measuringUnit VARCHAR(10), @unitPrice DECIMAL(11,2), @minPrice DECIMAL(11,2), @purchasePrice DECIMAL(11,2), @imgType VARCHAR(5)
@@ -122,10 +154,7 @@ BEGIN
     INSERT INTO itemStat( date, item, orderCount, viewCount) VALUES (GETDATE(),@id,0,1)
 END
 
-SELECT * FROM itemStat;
 
-
-SELECT item.id,item.itemCode,item.shop,item.name,item.description,item.qty,item.measuringUnit, item.unitPrice ,item.imgType ,shop.name as sName,shop.nearestTown FROM item,shop WHERE shop.id=item.shop AND item.id = @id  ORDER BY item.id;
 END
 GO
 
@@ -172,3 +201,169 @@ INSERT INTO item (itemCode, shop, name, description, qty, measuringUnit, unitPri
 ( '345345', 1, 'iPhone 6 Plus', 'Released 2014, September\r\n1GB RAM\r\n172g, 7.1mm thickness\r\niOS 8, up to iOS 12.4\r\n16GB/32GB/128GB storage, no card slot', 10, 'Device', '28000.00', '28000.00', '28000.00', 0, 'jpg'),
 ('546456', 1, 'iphone SE 2', 'Released 2020, May\r\n3GB RAM\r\n148g, 7.3mm thickness\r\niOS 11.1.1, up to iOS 13.4\r\n64GB storage, no card slot', 10, 'Device', '80000.00', '80000.00', '80000.00', 0, 'jpg'),
 ('iPhone 6s', 1, 'iPhone 6s', 'Released 2015, September2GB RAM143g, 7.1mm thicknessiOS 9, up to iOS 13.216GB/32GB storage, no card slot', 10, 'Device', '24000.00', '24000.00', '24000.00', 0, 'jpg');
+
+CREATE  VIEW getItemInfo
+AS 
+SELECT item.id,item.itemCode,item.shop,item.name,item.description,item.qty,item.measuringUnit, item.unitPrice ,item.imgType ,shop.name as sName,shop.nearestTown FROM item,shop WHERE shop.id=item.shop  
+
+
+
+CREATE  PROCEDURE addToCart @item INT,@qty INT,@trollyId INT 
+AS
+BEGIN
+IF EXISTS (SELECT * FROM order_item WHERE item =@item AND  trollyId =@trollyId ) 
+BEGIN
+  UPDATE order_item SET qty = @qty , timeStamp =getdate() WHERE item =@item AND  trollyId =@trollyId 
+END
+ELSE
+BEGIN
+    INSERT INTO order_item(item, qty, trollyId, status, timeStamp)
+ VALUES (@item,@qty,@trollyId,'PENDING',GETDATE());
+END
+END
+GO
+
+
+CREATE  VIEW getCart
+AS 
+SELECT item.itemCode,order_item.qty,order_item.trollyId,item.name As itemName,item.id AS itemId,shop.name As shopName,item.unitPrice,item.imgType,item.measuringUnit,order_item.id FROM shop,order_item,item WHERE order_item.item=item.id AND item.shop=shop.id 
+
+
+
+
+
+CREATE  PROCEDURE compleatOrder @userId INT,@address TEXT,@trollyId INT,@contactNo INT
+AS
+BEGIN
+
+    
+DECLARE @total INT
+DECLARE @netxTrolly INT
+ SET @total = (SELECT SUM((order_item.qty*unitPrice)+shop.charge )FROM shop,order_item,item WHERE order_item.item=item.id AND item.shop=shop.id AND order_item.trollyId=@trollyId);
+ SET @netxTrolly =(SELECT [trolleyId]  FROM [kade].[dbo].[info])+1;
+
+INSERT INTO [order] (trollyId,[user], timeStamp, total, address, contactNo, paymentStatus, type) 
+VALUES (@trollyId,@userId, GETDATE(),@total, @address, @contactNo, 'COMPLEATED', '1');
+
+UPDATE order_item SET status = 'COMPLEATED' WHERE order_item.trollyId = @trollyId;
+
+UPDATE info SET trolleyId=@netxTrolly;
+
+UPDATE [user] SET [trolleyId] = @netxTrolly WHERE [user].id = @userId; 
+
+END
+GO
+
+
+
+
+
+
+
+
+CREATE  VIEW getSales
+AS 
+SELECT TOP (1000) order_item.[id]
+      , order_item.[item]
+      ,item.[name]
+      , order_item.[qty]
+      , [item].[unitPrice]
+	  , [item].shop
+      , FORMAT ( order_item.[timeStamp], 'yyyy-MM-dd') AS timeStamp
+  FROM order_item,item 
+  WHERE order_item.item=item.id 
+
+
+
+  CREATE VIEW getSalesVsViews
+  AS
+  SELECT TOP (1000) [itemStat].[id]
+      ,[itemStat].[date]
+      ,[itemStat].[item]
+      ,[itemStat].[orderCount]
+      ,[itemStat].[viewCount],
+	  item.name
+  FROM [itemStat],item
+  WHERE [itemStat].item=item.id 
+ 
+
+
+
+CREATE TRIGGER orderTriger ON [order] 
+
+AFTER INSERT
+
+AS
+	BEGIN
+IF EXISTS (SELECT * FROM stats WHERE date =CONVERT(date, getdate())) 
+BEGIN
+  UPDATE stats SET orders = orders+1 WHERE date =CONVERT(date, getdate()) 
+END
+ELSE
+BEGIN
+    INSERT into [stats] (orders,shops,users,items) VALUES (1,0,0,0);
+END
+
+
+END
+
+
+
+CREATE TRIGGER shopTriger ON [shop] 
+
+AFTER INSERT
+
+AS
+	BEGIN
+IF EXISTS (SELECT * FROM stats WHERE date =CONVERT(date, getdate())) 
+BEGIN
+  UPDATE stats SET shops = shops+1 WHERE date =CONVERT(date, getdate()) 
+END
+ELSE
+BEGIN
+    INSERT into [stats] (orders,shops,users,items) VALUES (0,1,0,0);
+END
+
+
+END
+
+
+
+CREATE TRIGGER userTriger ON [user] 
+
+AFTER INSERT
+
+AS
+	BEGIN
+IF EXISTS (SELECT * FROM stats WHERE date =CONVERT(date, getdate())) 
+BEGIN
+  UPDATE stats SET users = users+1 WHERE date =CONVERT(date, getdate()) 
+END
+ELSE
+BEGIN
+    INSERT into [stats] (orders,shops,users,items) VALUES (0,0,1,0);
+END
+
+
+END
+
+
+
+CREATE TRIGGER itemTriger ON [item] 
+
+AFTER INSERT
+
+AS
+	BEGIN
+IF EXISTS (SELECT * FROM stats WHERE date =CONVERT(date, getdate())) 
+BEGIN
+  UPDATE stats SET items = items+1 WHERE date =CONVERT(date, getdate()) 
+END
+ELSE
+BEGIN
+    INSERT into [stats] (orders,shops,users,items) VALUES (0,0,0,1);
+END
+
+
+END
+

@@ -65,8 +65,8 @@ include "../CommenLayouts/sideDrawerEnd.php";
 					<table class="table table-condensed">
     <thead>
       <tr>
-        <th>FirstName</th>
-        <th>LastName</th>
+        <th>Item</th>
+        <th>Cost</th>
  
       </tr>
     </thead>
